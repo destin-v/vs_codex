@@ -18,6 +18,18 @@ This is a development template designed with VsCode configurations, development 
 * [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
 * [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)
 
+# TestExplorer UI
+To have TestExplorer UI properly detect your tests by pressing **Shift-Cmd-P** and selecting:
+
+* **Python: Configure Tests** --> **Pytests** --> **<target_dir>**
+
+Set  `PYTHONPATH` in `.vscode/.env` to point to your test directory.
+
+```
+PYTHONPATH="/Users/projects/custom_python_library/"
+```
+
+For a full explaination on how to properly setup the TestExplorer UI refer to this [post](https://graycode.ie/blog/how-to-set-up-testing-explorer-with-python-pytest-in-vscode/).
 
 # Remote Development
 ## SSH Keys
