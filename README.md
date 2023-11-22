@@ -19,3 +19,28 @@ This is a development template designed with VsCode configurations, development 
 * [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)
 
 
+# Remote Development
+## SSH Keys
+To generate your SSH keys, type the following command:
+
+```console
+ssh-keygen
+```
+
+Copy the SSH keys to the host:
+```console
+ssh-copy-id <user_id>@<host_ip>
+```
+
+Log into the host:
+```console
+ssh <user_id>@<host_ip>
+```
+
+## Troubleshooting
+If performing remote development you may need to configure your file locking parameters depending on whether it is allowed on the host:
+
+* Settings -> remote.SSH.useFlock=False
+* Remote-SSH -> Kill Vs Code Server on Host
+
+This will disable file locking and restart the remote VS Code host.
