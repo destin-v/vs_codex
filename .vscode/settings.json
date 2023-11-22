@@ -35,7 +35,7 @@
     "python.testing.pytestArgs": [
         "."
     ],
-    "python.testing.unittestEnabled": true,
+    "python.testing.unittestEnabled": false,
     "___________________________Themes___________________________": "",
     "workbench.colorTheme": "Visual Studio Light",
     "___________________________Misc___________________________": "",
