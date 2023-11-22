@@ -13,6 +13,8 @@
     "editor.formatOnSave": true,
     "terminal.integrated.fontSize": 11.5,
     "markdown.preview.fontSize": 14.5,
+    "___________________________Workspace___________________________": "",
+    "workbench.editor.showTabs": "none",
     "___________________________Rulers___________________________": "",
     "editor.rulers": [
         100
