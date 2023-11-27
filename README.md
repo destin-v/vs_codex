@@ -18,6 +18,12 @@ This is a development template designed with VsCode configurations, development 
 * [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
 * [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)
 
+# Tabs
+In general you should never need to have tabs.  Vscode provides an ordered list of all files and windows you have opened sorted alphabetically.  This is a much better way of accessing files.
+
+* **Cmd-P** # shows all tabs
+* Settings › Workbench › Editor: Show Tabs [OFF]
+
 # TestExplorer UI
 To have TestExplorer UI properly detect your tests by pressing **Shift-Cmd-P** and selecting:
 
@@ -52,8 +58,8 @@ ssh <user_id>@<host_ip>
 ## Troubleshooting
 If performing remote development you may need to configure your file locking parameters depending on whether it is allowed on the host:
 
-* **Settings** -> Remote.SSH: Lockfiles In Tmp [ON]
-* **Settings** -> Remote.SSH: useFlock=False [OFF]
-* **Cmd-Shift-P** -> Remote-SSH: Kill VS Code Server on Host...
+* Settings › Remote.SSH: Lockfiles In Tmp [ON]
+* Settings › Remote.SSH: useFlock [OFF]
+* **Cmd-Shift-P** › Remote-SSH: Kill VS Code Server on Host...
 
 This will disable file locking and restart the remote VS Code host.  You will have to download all of your extensions once it reconnects with the server.
