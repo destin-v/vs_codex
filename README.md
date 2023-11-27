@@ -52,7 +52,7 @@ ssh <user_id>@<host_ip>
 ## Troubleshooting
 If performing remote development you may need to configure your file locking parameters depending on whether it is allowed on the host:
 
-* Settings -> remote.SSH.useFlock=False
-* Remote-SSH -> Kill Vs Code Server on Host
+* **Settings** -> remote.SSH.useFlock=False
+* **Cmd-Shift-P** -> Remote-SSH: Kill VS Code Server on Host...
 
-This will disable file locking and restart the remote VS Code host.
+This will disable file locking and restart the remote VS Code host.  You will have to download all of your extensions once it reconnects with the server.
