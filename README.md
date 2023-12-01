@@ -24,6 +24,17 @@ In general you should never need to have tabs.  Vscode provides an ordered list 
 * **Cmd-P** # shows all tabs
 * Settings › Workbench › Editor: Show Tabs [OFF]
 
+# Theme
+To customize your themes you need to set them in your settings.json file.  To identify items you want to change in the editor, you will have to use the inspector:
+
+**Cmd-Shift-P › Inspect Editor Tokens and Scopes**
+
+This feature allows you to view the settings and scope of any item in your editor.  Once you have identified the item you want to change, go to the `settings.json` and make the desired modifications.
+
+References:
+* https://stackoverflow.com/questions/57024732/how-can-i-customize-python-syntax-highlighting-in-vs-code
+* https://www.alveeakand.com/how-to-modify-themes-in-vscode/
+
 # TestExplorer UI
 To have TestExplorer UI properly detect your tests by pressing **Shift-Cmd-P** and selecting:
 
