@@ -15,6 +15,32 @@
     "markdown.preview.fontSize": 14.5,
     "___________________________Workspace___________________________": "",
     "workbench.editor.showTabs": "single",
+    "workbench.colorCustomizations": {},
+    "editor.tokenColorCustomizations": {
+        // "functions": {
+        //     "fontStyle": "italic bold",
+        // },
+        "textMateRules": [
+            {
+                "scope": "entity.name.function.python",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "entity.name.function.decorator.python",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "storage.type.function.python",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            }
+        ]
+    },
     "___________________________Rulers___________________________": "",
     "editor.rulers": [
         100
