@@ -1,4 +1,17 @@
+<figure>
+    <p align="center">
+    <img src="docs/pics/logo.gif" alt="drawing" width="600"/>
+    </p>
+  <figcaption align = "center"></figcaption>
+</figure>
+
 # Description
+<figure>
+    <p align="center">
+    <img src="docs/pics/program_logo.png" alt="drawing" width="150"/>
+    </p>
+  <figcaption align = "center"></figcaption>
+</figure>
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
 
 # VsCode Recommended Extensions
