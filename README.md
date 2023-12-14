@@ -16,6 +16,7 @@ This is a development template designed with VsCode configurations, development 
 
 # VsCode Recommended Extensions
 * [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
+* [Back & Forth](https://marketplace.visualstudio.com/items?itemName=nick-rudenko.back-n-forth)
 * [Black](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
 * [Chronicler](https://marketplace.visualstudio.com/items?itemName=arcsine.chronicler)
 * [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
