@@ -3,38 +3,22 @@ Nox creates a new virtual environment for each individual test.  Thus, it is imp
 
 Useful commands:
 
-# Lists out all the available sessions
-> nox --list
-
-# Runs the session for pytest
-> nox -s pytest
+```console
+nox --list          # Lists out all the available sessions
+nox -s pytest       # Runs the session for pytest
+```
 
 """
 import nox
 
 
-@nox.session
+@nox.session(python=["3.8.0", "3.9.0"])
 def pytest(session):
     """Run PyTests."""
 
     session.run("poetry", "install")
     session.install("pytest")
     session.run("pytest", "-v")
-
-
-@nox.session
-def flake8(session):
-    """Lint checking."""
-
-    session.install("flake8")
-    session.run("flake8")
-
-
-@nox.session
-def black(session):
-    """Format with Black."""
-    session.install("black")
-    session.run("black")
 
 
 @nox.session
