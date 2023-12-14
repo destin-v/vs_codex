@@ -5,7 +5,7 @@
   <figcaption align = "center"></figcaption>
 </figure>
 
-# Description
+# :ledger: Description
 <figure>
     <p align="center">
     <img src="docs/pics/program_logo.png" alt="drawing" width="150"/>
@@ -14,7 +14,7 @@
 </figure>
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
 
-# VsCode Recommended Extensions
+# :package: VsCode Recommended Extensions
 * [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
 * [Back & Forth](https://marketplace.visualstudio.com/items?itemName=nick-rudenko.back-n-forth)
 * [Black](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
@@ -32,13 +32,7 @@ This is a development template designed with VsCode configurations, development 
 * [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
 * [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)
 
-# Tabs
-In general you should never need to have tabs.  Vscode provides an ordered list of all files and windows you have opened sorted alphabetically.  This is a much better way of accessing files.
-
-* **Cmd-P** # shows all tabs
-* Settings › Workbench › Editor: Show Tabs [OFF]
-
-# Theme
+# :sparkles: Theme
 To customize your themes you need to set them in your settings.json file.  To identify items you want to change in the editor, you will have to use the inspector:
 
 **Cmd-Shift-P › Inspect Editor Tokens and Scopes**
@@ -49,38 +43,45 @@ References:
 * https://stackoverflow.com/questions/57024732/how-can-i-customize-python-syntax-highlighting-in-vs-code
 * https://www.alveeakand.com/how-to-modify-themes-in-vscode/
 
-# TestExplorer UI
-To have TestExplorer UI properly detect your tests by pressing **Shift-Cmd-P** and selecting:
-
-* **Python: Configure Tests** --> **Pytests** --> **<target_dir>**
-
-Set  `PYTHONPATH` in `.vscode/.env` to point to your test directory.
-
-```
-PYTHONPATH="/Users/projects/custom_python_library/"
-```
-
-For a full explaination on how to properly setup the TestExplorer UI refer to this [post](https://graycode.ie/blog/how-to-set-up-testing-explorer-with-python-pytest-in-vscode/).
-
-# Remote Development
-## SSH Keys
+# :shell: Remote Development
 To generate your SSH keys, type the following command:
 
 ```console
 ssh-keygen
+ssh-copy-id <user_id>@<host_ip>   # Copy the SSH keys to the host
+ssh <user_id>@<host_ip>           # Log into the host
 ```
 
-Copy the SSH keys to the host:
-```console
-ssh-copy-id <user_id>@<host_ip>
-```
+# :whale: Container Development
+An example Dockerfile is included in the `.devcontainer` [**folder**](.devcontainer/README.md).  Containerization is essential if you plan on deploying your software.  As such, it is **strongly** recommended that you use containerization via [Docker](https://www.docker.com) or [Apptainer](https://apptainer.org).
 
-Log into the host:
-```console
-ssh <user_id>@<host_ip>
-```
 
-## Troubleshooting
+# :infinity: Continuous Integration (CI) Tools
+Several CI tools have been included with this codex:
+
+* **coverage**: provides code coverage analysis
+* **pdoc3**: automatic documentation software
+* **scalene**: profiler for evaluating performance
+
+The `noxfile.py` provides an example of how to run each of these.  The `ci` folder contain configuration settings that apply to these tools.
+
+# :teddy_bear: Misc
+## Tab Removal
+In general you should never need to have tabs.  Vscode provides an ordered list of all files and windows you have opened sorted alphabetically.  This is a much better way of accessing files.
+
+* **Cmd-P** # shows all tabs
+* Settings › Workbench › Editor: Show Tabs [OFF]
+
+# :wrench: Troubleshooting
+
+## TestExplorer UI
+To have TestExplorer UI properly detect your tests by pressing and selecting:
+
+* **Shift-Cmd-P** › Python: Configure Tests › Pytests › <target_dir>
+
+For a full explaination on how to properly setup the TestExplorer UI see [here](https://graycode.ie/blog/how-to-set-up-testing-explorer-with-python-pytest-in-vscode/).
+
+## SSH FileLocking
 If performing remote development you may need to configure your file locking parameters depending on whether it is allowed on the host:
 
 * Settings › Remote.SSH: Lockfiles In Tmp [ON]
