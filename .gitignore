@@ -1,2 +1,9 @@
+# Files to ignore
 .DS_Store
 *.pyc
+.coverage
+
+# Folders to ignore
+html
+.pytest_cache
+__pycache__
