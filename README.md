@@ -33,7 +33,7 @@ This is a development template designed with VsCode configurations, development 
 * [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
 * [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)
 
-# :sparkles: Theme
+# ✨ Theme
 To customize your themes you need to set them in your settings.json file.  To identify items you want to change in the editor, you will have to use the inspector:
 
 **Cmd-Shift-P › Inspect Editor Tokens and Scopes**
@@ -44,7 +44,7 @@ References:
 * https://stackoverflow.com/questions/57024732/how-can-i-customize-python-syntax-highlighting-in-vs-code
 * https://www.alveeakand.com/how-to-modify-themes-in-vscode/
 
-# :shell: Remote Development
+# 🐚 Remote Development
 To generate your SSH keys, type the following command:
 
 ```console
@@ -53,11 +53,11 @@ ssh-copy-id <user_id>@<host_ip>   # Copy the SSH keys to the host
 ssh <user_id>@<host_ip>           # Log into the host
 ```
 
-# :whale: Container Development
+# 🐳 Container Development
 An example Dockerfile is included in the `.devcontainer` [**folder**](.devcontainer/README.md).  Containerization is essential if you plan on deploying your software.  As such, it is **strongly** recommended that you use containerization via [Docker](https://www.docker.com) or [Apptainer](https://apptainer.org).
 
 
-# :infinity: Continuous Integration (CI) Tools
+# ♾️ Continuous Integration (CI) Tools
 Several CI tools have been included with this codex:
 
 * **coverage**: provides code coverage analysis
@@ -66,14 +66,14 @@ Several CI tools have been included with this codex:
 
 The `noxfile.py` provides an example of how to run each of these.  The `ci` folder contain configuration settings that apply to these tools.
 
-# :teddy_bear: Misc
+# 🧸 Misc
 ## Tab Removal
 In general you should never need to have tabs.  Vscode provides an ordered list of all files and windows you have opened sorted alphabetically.  This is a much better way of accessing files.
 
 * **Cmd-P** # shows all tabs
 * Settings › Workbench › Editor: Show Tabs [OFF]
 
-# :wrench: Troubleshooting
+# 🔧 Troubleshooting
 
 ## TestExplorer UI
 To have TestExplorer UI properly detect your tests by pressing and selecting:
