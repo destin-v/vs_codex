@@ -1,1 +1,24 @@
-Pdoc3: Automatic Documentation
+<%!
+     from pdoc.html_helpers import minify_css
+ %>
+ <%def name="homelink()" filter="minify_css">
+     .homelink {
+         display: block;
+         font-size: 2em;
+         font-weight: bold;
+         color: #555;
+         padding-bottom: 1em;
+         border-bottom: 1px solid silver;
+     }
+     .homelink:hover {
+         color: inherit;
+     }
+     .homelink img {
+         max-width:30%;
+         max-height: 5em;
+         margin: auto;
+         margin-bottom: .3em;
+     }
+ </%def>
+
+ <style>${homelink()}</style>
