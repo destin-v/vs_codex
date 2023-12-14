@@ -1,9 +1,12 @@
 # Files to ignore
-.DS_Store
 *.pyc
 .coverage
+.DS_Store
+poetry.lock
 
 # Folders to ignore
-html
-.pytest_cache
 __pycache__
+.nox
+.pytest_cache
+html
+save
