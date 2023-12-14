@@ -4,15 +4,22 @@ Nox creates a new virtual environment for each individual test.  Thus, it is imp
 Useful commands:
 
 ```console
-nox --list          # Lists out all the available sessions
-nox -s pytest       # Runs the session for pytest
+nox --list              # Lists out all the available sessions
+nox -s pytest           # Run pytests
+nox -s coverage         # Run coverage
+nox -s profile          # Profile the code
+nox -s documentation    # Generate documentation
+
+nox                     # Run all sessions
 ```
 
 """
+import subprocess
+
 import nox
 
 
-@nox.session(python=["3.8.0", "3.9.0"])
+@nox.session(python=["3.8", "3.9", "3.10"])
 def pytest(session):
     """Run PyTests."""
 
@@ -36,23 +43,37 @@ def profile(session):
     """Profiles your selected code using scalene."""
 
     session.run("poetry", "install")
-
+    session.run("mkdir", "-p", "save/profile")
     session.run(
         "scalene",
         "--outfile",
-        "save/profile.html",
+        "save/profile/profile.html",
         "--html",
-        "main.py",
-        env={
-            "LINES": "25",
-            "COLUMNS": "200",
-        },
+        "-m",
+        "pytest",
+        env={"LINES": "25", "COLUMNS": "200"},
     )
 
 
 @nox.session
-def documentation(session):
+def autodoc(session):
     """Generate automatic documentation."""
 
-    session.run("poetry", "install")
-    session.run("pdoc3", "--html", "src")
+    session.run("pip", "install", "pdoc")
+    subprocess.run(["mkdir", "-p", "html/docs"])
+    subprocess.run(["cp", "-rf", "docs/pics", "html/docs/"])
+
+    subprocess.run(
+        [
+            "pdoc",
+            "--logo",
+            "https://github.com/destin-v/vs_codex/blob/main/docs/pics/program_logo.png?raw=true",
+            "--logo-link",
+            "https://github.com/destin-v/vs_codex",
+            "--footer-text",
+            "Author: W. Li",
+            "--output-directory",
+            "html",
+            "src",
+        ]
+    )
