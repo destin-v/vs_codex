@@ -14,7 +14,7 @@
 ## 📦 Packages
 The default development containers will these packages by default.  Only the essentials are included.
 
-* [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/) 
+* [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/)
 * [Oh My Bash](https://github.com/ohmybash/oh-my-bash)
 * [Oh My Zsh](https://ohmyz.sh)
 * [Precommit](https://pre-commit.com)

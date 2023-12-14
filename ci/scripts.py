@@ -7,8 +7,8 @@ Common functions that are executed when running Continuous Integration (CI) incl
 * autodocs: automatic documentation generation
 
 """
-import subprocess
 import os
+import subprocess
 
 
 def pytest():
