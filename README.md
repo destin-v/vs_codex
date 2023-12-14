@@ -5,7 +5,7 @@
   <figcaption align = "center"></figcaption>
 </figure>
 
-# :ledger: Description
+# 📒 Description
 <figure>
     <p align="center">
     <img src="docs/pics/program_logo.png" alt="drawing" width="150"/>
@@ -14,7 +14,7 @@
 </figure>
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
 
-# :package: VsCode Recommended Extensions
+# 📦 VsCode Recommended Extensions
 * [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
 * [Back & Forth](https://marketplace.visualstudio.com/items?itemName=nick-rudenko.back-n-forth)
 * [Black](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
