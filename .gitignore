@@ -6,6 +6,7 @@ poetry.lock
 
 # Folders to ignore
 __pycache__
+.mypy_cache
 .nox
 .pytest_cache
 html
