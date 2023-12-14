@@ -8,7 +8,6 @@ log_cli_date_format = "%Y-%m-%d %H:%M:%S"
 
 [tool.black]
 line-length = 100
-target-version = ['py39']
 include = '\.pyi?$'
 exclude = '''
 /(
@@ -35,7 +34,7 @@ exclude = '''
 '''
 
 [tool.poetry]
-name = "dev-template"
+name = "vs_codex"
 version = "0.1.0"
 description = ""
 authors = ["W. Li <william.li1@me.com>"]
@@ -43,7 +42,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.10"
 
 [tool.poetry.group.dev.dependencies]
 black = "*"
@@ -52,9 +51,8 @@ mypy = "*"
 nox = "*"
 numpy = "*"
 pandas = "*"
-pdoc3 = "*"
+pdoc = "*"
 pre-commit = "*"
-pylint = "*"
 pytest = "*"
 scalene = "*"
 torch = "*"
