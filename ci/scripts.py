@@ -9,6 +9,7 @@ Common functions that are executed when running Continuous Integration (CI) incl
 """
 import os
 import subprocess
+import webbrowser
 
 
 def pytest():
@@ -16,43 +17,31 @@ def pytest():
     subprocess.run(["pytest"])
 
 
-def coverage():
+def coverage(browser: str = "chrome", local_path: str = "save/coverage"):
     """Run coverage of code based on pytests."""
+
     # Run coverage using pytest, then record results to docs.
     subprocess.run(["coverage", "run", "-m", "pytest"])
-    subprocess.run(["coverage", "html", "-d", "save/coverage"])
+    subprocess.run(["coverage", "html", "-d", local_path])
     subprocess.run(["coverage", "report", "-m"])
+
+    # Open in a browser and view results
+    cwd = os.getcwd()
+    url = f"file://{cwd}/{local_path}/index.html"
+    webbrowser.get(browser).open(url)
 
 
 def profile():
     """Profiles your selected code using scalene."""
 
-    cwd = os.getcwd()
-    subprocess.run(["mkdir", "-p", "save/profile"])
-
-    # Profile the code.
-    subprocess.run(
-        [
-            "scalene",
-            "--outfile",
-            f"{cwd}/save/profile/profile.html",
-            "--html",
-            "-m",
-            "pytest",
-        ],
-        shell=True,
-        env={
-            "LINES": "25",
-            "COLUMNS": "200",
-        },
-    )
+    subprocess.run(["scalene", "-m", "pytest"])
 
 
-def autodoc():
+def autodoc(browser: str = "chrome", local_path: str = "save/pdocs"):
     """Generate automatic documentation."""
 
-    subprocess.run(["mkdir", "-p", "html/docs"])
-    subprocess.run(["cp", "-rf", "docs/pics", "html/docs/"])
+    subprocess.run(["mkdir", "-p", f"{local_path}/docs"])
+    subprocess.run(["cp", "-rf", "docs/pics", f"{local_path}/docs/"])
     subprocess.run(
         [
             "pdoc",
@@ -63,14 +52,12 @@ def autodoc():
             "--footer-text",
             "Author: W. Li",
             "--output-directory",
-            "html",
+            local_path,
             "src",
         ]
     )
 
-
-if __name__ == "__main__":
-    # pytest()
-    # coverage()
-    profile()
-    # autodoc()
+    # Open in a browser and view results
+    cwd = os.getcwd()
+    url = f"file://{cwd}/{local_path}/index.html"
+    webbrowser.get(browser).open(url)
