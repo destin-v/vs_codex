@@ -12,11 +12,6 @@ import subprocess
 import webbrowser
 
 
-def pytest():
-    """Run pytests."""
-    subprocess.run(["pytest"])
-
-
 def coverage(browser: str = "chrome", local_path: str = "save/coverage"):
     """Run coverage of code based on pytests."""
 
