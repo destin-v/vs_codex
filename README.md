@@ -64,7 +64,7 @@ Several CI tools have been included with this codex:
 * **pdoc3**: automatic documentation software
 * **scalene**: profiler for evaluating performance
 
-The `noxfile.py` provides an example of how to run each of these.  The `ci` folder contain configuration settings that apply to these tools.
+The `noxfile.py` provides an example of how to run each of these.  The `ci` folder contains common CI scripts.  For an explaination on how to properly setup multiple versions of Python to run with Nox see [here](https://sethmlarson.dev/nox-pyenv-all-python-versions).
 
 # 🧸 Misc
 ## Tab Removal
