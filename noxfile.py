@@ -8,23 +8,24 @@ nox --list              # Lists out all the available sessions
 nox -s pytest           # Run pytests
 nox -s coverage         # Run coverage
 nox -s profile          # Profile the code
-nox -s documentation    # Generate documentation
+nox -s autodoc          # Generate documentation
 
 nox                     # Run all sessions
 ```
 
 """
-import subprocess
-
 import nox
+
+from ci.scripts import autodoc as ci_autodoc
+from ci.scripts import coverage as ci_coverage
+from ci.scripts import profile as ci_profile
 
 
 @nox.session(python=["3.8", "3.9", "3.10"])
 def pytest(session):
     """Run PyTests."""
 
-    session.run("poetry", "install")
-    session.install("pytest")
+    session.run("poetry", "install", "--with=dev", external=True)
     session.run("pytest", "-v")
 
 
@@ -32,48 +33,21 @@ def pytest(session):
 def coverage(session):
     """Runs coverage pytests"""
 
-    session.run("poetry", "install")
-    session.run("coverage", "run", "-m", "pytest")
-    session.run("coverage", "html", "-d", "save/coverage")
-    session.run("coverage", "report", "-m")
+    session.run("poetry", "install", "--with=dev", external=True)
+    ci_coverage()
 
 
 @nox.session
 def profile(session):
     """Profiles your selected code using scalene."""
 
-    session.run("poetry", "install")
-    session.run("mkdir", "-p", "save/profile")
-    session.run(
-        "scalene",
-        "--outfile",
-        "save/profile/profile.html",
-        "--html",
-        "-m",
-        "pytest",
-        env={"LINES": "25", "COLUMNS": "200"},
-    )
+    session.run("poetry", "install", "--with=dev", external=True)
+    ci_profile()
 
 
 @nox.session
 def autodoc(session):
-    """Generate automatic documentation."""
+    """Generate pdocs."""
 
-    session.run("pip", "install", "pdoc")
-    subprocess.run(["mkdir", "-p", "html/docs"])
-    subprocess.run(["cp", "-rf", "docs/pics", "html/docs/"])
-
-    subprocess.run(
-        [
-            "pdoc",
-            "--logo",
-            "https://github.com/destin-v/vs_codex/blob/main/docs/pics/program_logo.png?raw=true",
-            "--logo-link",
-            "https://github.com/destin-v/vs_codex",
-            "--footer-text",
-            "Author: W. Li",
-            "--output-directory",
-            "html",
-            "src",
-        ]
-    )
+    session.run("poetry", "install", "--with=dev", external=True)
+    ci_autodoc()
