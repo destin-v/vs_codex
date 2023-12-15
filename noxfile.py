@@ -16,9 +16,9 @@ nox                     # Run all sessions
 """
 import nox
 
-from ci.scripts import autodoc as ci_autodoc
-from ci.scripts import coverage as ci_coverage
-from ci.scripts import profile as ci_profile
+from src.ci.utils import autodoc as ci_autodoc
+from src.ci.utils import coverage as ci_coverage
+from src.ci.utils import profile as ci_profile
 
 
 @nox.session(python=["3.8", "3.9", "3.10"])
