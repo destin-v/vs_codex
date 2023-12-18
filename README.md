@@ -61,7 +61,7 @@ An example Dockerfile is included in the `.devcontainer` [**folder**](.devcontai
 Several CI tools have been included with this codex:
 
 * **coverage**: provides code coverage analysis
-* **pdoc3**: automatic documentation software
+* **pdoc**: automatic documentation software
 * **scalene**: profiler for evaluating performance
 
 The `noxfile.py` provides an example of how to run each of these.  The `src/ci` folder contains common CI modules.  For an explaination on how to properly setup multiple versions of Python to run with Nox see [here](https://sethmlarson.dev/nox-pyenv-all-python-versions).
