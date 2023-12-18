@@ -12,7 +12,7 @@ import subprocess
 import webbrowser
 
 
-def coverage(browser: str = "chrome", local_path: str = "save/coverage"):
+def coverage(browser: str | None = None, local_path: str = "save/coverage"):
     """Run coverage of code based on pytests."""
 
     # Run coverage using pytest, then record results to docs.
@@ -32,7 +32,7 @@ def profile():
     subprocess.run(["scalene", "-m", "pytest"])
 
 
-def autodoc(browser: str = "chrome", local_path: str = "save/pdocs"):
+def autodoc(browser: str | None = None, local_path: str = "save/pdocs"):
     """Generate automatic documentation."""
 
     subprocess.run(["mkdir", "-p", f"{local_path}/docs"])
