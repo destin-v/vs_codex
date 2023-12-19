@@ -3,8 +3,8 @@ Common functions that are executed when running Continuous Integration (CI) incl
 
 * `pytests`: tests to verify code
 * `coverage`: coverage of code given pytests
-* `profiling`: profiling of certain functions
-* `autodocs`: automatic documentation generation
+* `profile`: profiling of certain functions
+* `autodoc`: automatic documentation generation
 """
 import os
 import subprocess
