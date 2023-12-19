@@ -5,4 +5,4 @@ There are a few continuous integration processes that should be implemented with
 * `pytests`: Independent unit tests to verify that code is functional.
 * `coverage`: Checking which parts of the code are executed during unit testing.
 * `profile`: Identify bottlenecks in the code to and measure performance.
-* `autodocs`: Automatic generation of documenation based on code and comments.
+* `autodoc`: Automatic generation of documenation based on code and comments.
