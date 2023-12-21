@@ -54,6 +54,7 @@ def autodoc(browser: str | None = None, local_path: str = "save/pdocs"):
             "https://github.com/destin-v/vs_codex/blob/main/docs/pics/program_logo.png?raw=true",
             "--logo-link",
             "https://github.com/destin-v/vs_codex",
+            "--math",
             "--footer-text",
             "Author: W. Li",
             "--output-directory",
