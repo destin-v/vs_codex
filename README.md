@@ -1,32 +1,28 @@
 <figure>
     <p align="center">
-    <img src="docs/pics/logo.gif" alt="drawing" width="600"/>
+      <img src="docs/pics/logo.gif" alt="drawing" width="600"/>
     </p>
-  <figcaption align = "center"></figcaption>
 </figure>
 
+<p align="center">
 
-<div style="text-align: center;">
+  [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/destin-v)
 
-[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/destin-v)
-
-</div>
+</p>
 
 # 📒 Description
 <figure>
     <p align="center">
-    <img src="docs/pics/program_logo.png" alt="drawing" width="150"/>
+      <img src="docs/pics/program_logo.png" alt="drawing" width="150"/>
     </p>
-  <figcaption align = "center"></figcaption>
 </figure>
 
-<div style="text-align: center;">
 
-![badge](https://badgen.net/static/Python/^3.10)
-![badge](https://badgen.net/static/Tests/Pytest/green)
-![badge](https://badgen.net/static/Documentation/pdoc/red)
-
-</div>
+<p align="center">
+    <img src="https://badgen.net/static/Python/^3.10" alt="">
+    <img src="https://badgen.net/static/Tests/Pytest/green" alt="">
+    <img src="https://badgen.net/static/Documentation/pdoc/red" alt="">
+</p>
 
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
 
