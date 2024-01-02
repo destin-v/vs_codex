@@ -5,6 +5,13 @@
   <figcaption align = "center"></figcaption>
 </figure>
 
+
+<div style="text-align: center;">
+
+[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/destin-v)
+
+</div>
+
 # 📒 Description
 <figure>
     <p align="center">
@@ -12,7 +19,18 @@
     </p>
   <figcaption align = "center"></figcaption>
 </figure>
+
+<div style="text-align: center;">
+
+![badge](https://badgen.net/static/Python/^3.10)
+![badge](https://badgen.net/static/Tests/Pytest/green)
+![badge](https://badgen.net/static/Documentation/pdoc/red)
+
+</div>
+
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
+
+
 
 # 📦 VsCode Recommended Extensions
 * [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
