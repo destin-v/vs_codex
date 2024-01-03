@@ -112,3 +112,10 @@ If performing remote development you may need to configure your file locking par
 * **Cmd-Shift-P** › Remote-SSH: Kill VS Code Server on Host...
 
 This will disable file locking and restart the remote VS Code host.  You will have to download all of your extensions once it reconnects with the server.
+
+## Reducing Git Size
+To repack git to be the smallest size possible while retaining the history use the command:
+
+```console
+ git repack -a -d --depth=250 --window=250
+ ```
