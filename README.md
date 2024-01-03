@@ -1,6 +1,6 @@
 <figure>
     <p align="center">
-      <img src="docs/pics/logo.gif" alt="drawing" width="600"/>
+    <img src="https://drive.google.com/uc?export=view&id=1yFte-RASCcF1ahkYg1Jybavi-gWje8kp" alt="drawing" width="600"/>
     </p>
 </figure>
 
