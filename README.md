@@ -114,8 +114,22 @@ If performing remote development you may need to configure your file locking par
 This will disable file locking and restart the remote VS Code host.  You will have to download all of your extensions once it reconnects with the server.
 
 ## Reducing Git Size
-To repack git to be the smallest size possible while retaining the history use the command:
 
+To remove large files from a Git repo use [BFG](https://rtyley.github.io/bfg-repo-cleaner/).
+
+```console
+# Remove the unwanted data from Git
+brew install bfg                                        # installs everything you need
+git clone --mirror git://example.com/some-big-repo.git  # clone a fresh copy of repo using --mirror
+bfg --strip-blobs-bigger-than 1M some-big-repo.git      # remove files larger than a set size
+
+# Now remove the untracked data
+cd some-big-repo.git
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+git push
+```
+
+To repack git to be the smallest size possible while retaining the history use the command:
 ```console
  git repack -a -d --depth=250 --window=250
  ```
