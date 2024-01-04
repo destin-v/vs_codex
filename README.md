@@ -4,13 +4,6 @@
     </p>
 </figure>
 
-<div align="center">
-
-  <a href="https://github.com/destin-v">![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</a>
-
-</div>
-
-
 # 📒 Description
 <figure>
     <p align="center">
@@ -18,23 +11,14 @@
     </p>
 </figure>
 
-
-<div align="center">
-
-  <a href="https://devguide.python.org/versions/">![python](https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white)</a>
-  <a href="https://github.com/pre-commit/pre-commit">![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)</a>
-  <a href="https://docs.pytest.org/en/7.1.x/getting-started.html">![pytest](https://img.shields.io/badge/pytest-enabled-brightgreen?logo=pytest&logoColor=white)</a>
-  <a href="https://pdoc.dev">![pdoc](https://img.shields.io/badge/pdoc-enabled-brightgreen?logo=googledocs&logoColor=white)</a>
-  <a href="https://docs.github.com/en/actions/quickstart">![cicd](https://img.shields.io/badge/CI-github-red?logo=github&logoColor=white)</a>
-  <a href="https://black.readthedocs.io/en/stable/index.html">![style](https://badgen.net/static/code%20style/black/black)</a>
-
-
-</div>
-
+![python](https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white)
+![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)
+![pytest](https://img.shields.io/badge/pytest-enabled-brightgreen?logo=pytest&logoColor=white)
+![pdoc](https://img.shields.io/badge/pdoc-enabled-brightgreen?logo=googledocs&logoColor=white)
+![cicd](https://img.shields.io/badge/CI-github-blue?logo=github&logoColor=white)
+![style](https://badgen.net/static/code%20style/black/blue)
 
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
-
-
 
 # 📦 VsCode Recommended Extensions
 * [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
