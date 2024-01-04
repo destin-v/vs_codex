@@ -72,7 +72,6 @@ ssh <user_id>@<host_ip>           # Log into the host
 # 🐳 Container Development
 An example Dockerfile is included in the `.devcontainer` [**folder**](.devcontainer/README.md).  Containerization is essential if you plan on deploying your software.  As such, it is **strongly** recommended that you use containerization via [Docker](https://www.docker.com) or [Apptainer](https://apptainer.org).
 
-
 # ♾️ Continuous Integration (CI) Tools
 Several CI tools have been included with this codex:
 
@@ -81,6 +80,12 @@ Several CI tools have been included with this codex:
 * **scalene**: profiler for evaluating performance
 
 The `noxfile.py` provides an example of how to run each of these.  The `src/ci` folder contains common CI modules.  For an explaination on how to properly setup multiple versions of Python to run with Nox see [here](https://sethmlarson.dev/nox-pyenv-all-python-versions).
+
+All of the CI tools listed above can generate a `HTML` website.  You can upload the folders to a temporary website to view its contents:
+
+```console
+smokeshow upload path/to/folder  # this will generate a tempoary html link
+```
 
 # 🧸 Misc
 ## Tab Removal
@@ -127,3 +132,7 @@ To repack git to be the smallest size possible while retaining the history use t
 ```console
  git repack -a -d --depth=250 --window=250
  ```
+
+## Smokeshow
+
+If you are unable to utilize `smokeshow` make sure you are not behind a proxy.

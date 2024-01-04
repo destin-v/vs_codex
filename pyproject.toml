@@ -56,6 +56,7 @@ pandas = "*"
 pdoc = "*"
 pre-commit = "*"
 pytest = "*"
+smokeshow = "*"
 scalene = "*"
 torch = "*"
 
