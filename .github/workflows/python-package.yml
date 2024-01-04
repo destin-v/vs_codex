@@ -39,3 +39,5 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - uses: pre-commit-ci/lite-action@v1.0.1
+      if: always()
