@@ -11,12 +11,15 @@
     </p>
 </figure>
 
-![python](https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white)
-![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)
-![pytest](https://img.shields.io/badge/pytest-enabled-brightgreen?logo=pytest&logoColor=white)
-![pdoc](https://img.shields.io/badge/pdoc-enabled-brightgreen?logo=googledocs&logoColor=white)
-![cicd](https://img.shields.io/badge/CI-github-blue?logo=github&logoColor=white)
-![style](https://badgen.net/static/code%20style/black/blue)
+<p align="center">
+  <a href="https://devguide.python.org/versions/">              <img alt="" src="https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white"></a>
+  <a href="https://docs.github.com/en/actions/quickstart">      <img alt="" src="https://img.shields.io/badge/CI-github-blue?logo=github&logoColor=white"></a>
+  <a href="https://black.readthedocs.io/en/stable/index.html">  <img alt="" src="https://img.shields.io/badge/code%20style-black-blue"></a>
+  <a href="https://pre-commit.com">                             <img alt="" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit"></a>
+  <a href="https://pytest.org">                                 <img alt="" src="https://img.shields.io/badge/pytest-enabled-brightgreen?logo=pytest&logoColor=white"></a>
+  <a href="https://pdoc.dev">                                   <img alt="" src="https://img.shields.io/badge/pdoc-enabled-brightgreen?logo=googledocs&logoColor=white"></a>
+  <a href="">                                                   <img alt="" src="https://img.shields.io/badge/license-mit-mediumturquoise"></a>
+</p>
 
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
 
@@ -38,6 +41,13 @@ This is a development template designed with VsCode configurations, development 
 * [Remote - SSH: Editing Configuration Files](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
 * [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
 * [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)
+
+# 🅿 Pre-commit
+Always update your pre-commit to use the latest versions prior to starting a project.
+
+```console
+pre-commit autoupdate
+```
 
 # ✨ Theme
 To customize your themes you need to set them in your settings.json file.  To identify items you want to change in the editor, you will have to use the inspector:
