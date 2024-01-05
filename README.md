@@ -3,11 +3,9 @@
 </p>
 
 # 📒 Description
-<figure>
-    <p align="center">
-      <img src="docs/pics/program_logo.png" alt="drawing" width="150"/>
-    </p>
-</figure>
+<p align="center">
+  <img src="docs/pics/program_logo.png" alt="drawing" width="150"/>
+</p>
 
 <p align="center">
   <a href="https://devguide.python.org/versions/">              <img alt="" src="https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white"></a>
