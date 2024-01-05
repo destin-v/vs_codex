@@ -12,15 +12,15 @@
 <p align="center">
   <a href="https://devguide.python.org/versions/">              <img alt="" src="https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white"></a>
   <a href="https://black.readthedocs.io/en/stable/index.html">  <img alt="" src="https://img.shields.io/badge/code%20style-black-blue"></a>
+  <img alt="" src="https://img.shields.io/badge/license-mit-mediumturquoise">
+</p>
+
+<p align="center">
   <a href="https://pre-commit.com">                             <img alt="" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit"></a>
   <a href="https://pytest.org">                                 <img alt="" src="https://img.shields.io/badge/pytest-enabled-brightgreen?logo=pytest&logoColor=white"></a>
   <a href="https://pdoc.dev">                                   <img alt="" src="https://img.shields.io/badge/pdoc-enabled-brightgreen?logo=googledocs&logoColor=white"></a>
-  <img alt="" src="https://img.shields.io/badge/license-mit-mediumturquoise"></a>
   <img alt="" src="https://github.com/destin-v/vs_codex/actions/workflows/python-package.yml/badge.svg">
 </p>
-
-
-
 
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
 
