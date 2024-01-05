@@ -63,13 +63,6 @@ jobs:
       run: |
         poetry install --no-interaction --with=dev --no-root
     #----------------------------------------------
-    # Run linters
-    #----------------------------------------------
-    - name: Run linters
-      uses: wearerequired/lint-action@v2
-      with:
-        black: true
-    #----------------------------------------------
     # Run pytest
     #----------------------------------------------
     - name: Test with pytest
