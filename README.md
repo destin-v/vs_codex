@@ -74,6 +74,8 @@ ssh <user_id>@<host_ip>           # Log into the host
 An example Dockerfile is included in the `.devcontainer` [**folder**](.devcontainer/README.md).  Containerization is essential if you plan on deploying your software.  As such, it is **strongly** recommended that you use containerization via [Docker](https://www.docker.com) or [Apptainer](https://apptainer.org).
 
 # ♾️ Continuous Integration (CI) Tools
+A Github workflow with continuous integration is included.  The badge at the top of the README.md will update its status to display whether the CI process succeeds/fails.  Modify it to point to your own repo when starting a new project.
+
 Several CI tools have been included with this codex:
 
 * **coverage**: provides code coverage analysis
