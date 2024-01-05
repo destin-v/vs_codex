@@ -1,17 +1,37 @@
-# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+#===================================================================================================
+#
+#   DESCRIPTION:  Template for continuous integration using Github actions.  This workflow will
+#                 install Python dependencies and run tests with a variety of Python versions.
+#        AUTHOR:  W. Li
+#       VERSION:  1.0
+#       CREATED:  1/5/2024
+#
+# References:
+# * https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-pythonCommon
+#
+#===================================================================================================
 
-name: Python package
+name: CI
 
+#----------------------------------------------
+# Set the OS and python versions
+#----------------------------------------------
 on:
+  # Configure the branches you want Github actions to run on.
+  # Leave blank if you want to run on all branches.
   push:
-    branches: [ "main" ]
+    branches:
   pull_request:
     branches: [ "main" ]
 
+#----------------------------------------------
+# Configure jobs
+#----------------------------------------------
 jobs:
   build:
-
+    #----------------------------------------------
+    # Set the OS and python versions
+    #----------------------------------------------
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -20,60 +40,45 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    #----------------------------------------------
+    # Check-out repo and set-up python
+    #----------------------------------------------
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+    #----------------------------------------------
+    # Install poetry
+    #----------------------------------------------
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        virtualenvs-create: false
+        virtualenvs-in-project: false
+        installer-parallel: true
+    #----------------------------------------------
+    # Install dependencies
+    #----------------------------------------------
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        python -m pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        # comments will sometime run longer than 127 so this is set at 300 instead
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=300 --statistics
+        poetry install --no-interaction --with=dev --no-root
+    #----------------------------------------------
+    # Run pytest
+    #----------------------------------------------
     - name: Test with pytest
-      run: |
+      run: >
         pytest
-
-
-  # Use smokeshow to view our coverage report
-  cli-coverage-report:
-    # dogfooding! use smokeshow to view our coverage report
-    needs:
-      - cli-test
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-python@v1
-        with:
-          python-version: '3.10'
-
-      - run: pip install .
-        working-directory: cli
-      - run: pip install coverage
-
-      - name: get coverage artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: coverage_files
-          path: cli
-
-      - name: build coverage
-        working-directory: cli
-        run: |
-          coverage combine
-          coverage html -i
-
-      - run: smokeshow upload cli/htmlcov
-        env:
-          SMOKESHOW_GITHUB_STATUS_DESCRIPTION: CLI Coverage {coverage-percentage}
-          SMOKESHOW_GITHUB_COVERAGE_THRESHOLD: 50
-          SMOKESHOW_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SMOKESHOW_GITHUB_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        --doctest-modules
+        --cov=./
+        --cov-report=xml
+        --cov-report=html:pytest-results-${{ matrix.python-version }}
+    #----------------------------------------------
+    # Save artifacts
+    #----------------------------------------------
+    - name: Upload pytest test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: pytest-results-${{ matrix.python-version }}
+        path: pytest-results-${{ matrix.python-version }}
+      # Use always() to always run this step to publish test results when there are test failures
+      if: ${{ always() }}
