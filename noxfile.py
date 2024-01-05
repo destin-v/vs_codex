@@ -30,6 +30,14 @@ def pytest(session):
 
 
 @nox.session
+def pytest_cov(session):
+    """Run PyTests with coverage."""
+
+    session.run("poetry", "install", "--with=dev", external=True)
+    session.run("pytest", "--cov=./", "--cov-report=html:save/pytest-cov")
+
+
+@nox.session
 def coverage(session):
     """Runs coverage pytests"""
 

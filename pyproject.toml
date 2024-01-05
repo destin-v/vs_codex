@@ -56,9 +56,9 @@ pandas = "*"
 pdoc = "*"
 pre-commit = "*"
 pytest = "*"
+pytest-cov = "*"
 smokeshow = "*"
 scalene = "*"
-torch = "*"
 
 [build-system]
 requires = ["poetry-core"]
