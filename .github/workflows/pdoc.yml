@@ -52,7 +52,7 @@ jobs:
         run: |
           mkdir -p save/pdocs
           export PYTHONPATH=/home/runner/work/vs_codex/vs_codex/
-          nox -r -s publish
+          nox -r -s deploy_pdoc
       # Upload the artifact to the next job
       - name: Upload pdoc artifact
         uses: actions/upload-artifact@v3

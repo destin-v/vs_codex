@@ -2,45 +2,59 @@
 Common functions that are executed when running Continuous Integration (CI) include:
 
 * `pytests`: tests to verify code
+* `pytest_cov`: pytest with coverage of code
 * `coverage`: coverage of code given pytests
-* `profile`: profiling of certain functions
-* `autodoc`: automatic documentation generation
+* `pdoc`: automatic documentation generation
 """
 import os
 import subprocess
 import webbrowser
 
 
-def coverage(browser: str | None = None, local_path: str = "save/coverage"):
+def pytest_cov(browser: str | None = None, local_path: str = "save/pytest-cov", html: bool = True):
+    """Run pytest with coverage report.
+
+    Args:
+        browser (str | None, optional): Possible arguments include `Chrome`, `Firefox`, `Safari`.  If no browser is specified it will open using your system's default browser. Defaults to None.
+        local_path (str, optional): The local path to save the files. Defaults to "save/pytest-cov".
+        html (bool, optional): Option for viewing as HTML. Defaults to True.
+    """
+    subprocess.run(["pytest", "--cov=./", f"--cov-report=html:{local_path}"])
+
+    if html:
+        # Open in a browser and view results
+        cwd = os.getcwd()
+        url = f"file://{cwd}/{local_path}/index.html"
+        webbrowser.get(browser).open(url)
+
+def coverage(browser: str | None = None, local_path: str = "save/coverage", html: bool = True):
     """Run coverage of code based on pytests.
 
     Args:
         browser (str | None, optional): Possible arguments include `Chrome`, `Firefox`, `Safari`.  If no browser is specified it will open using your system's default browser. Defaults to None.
         local_path (str, optional): The local path to save the files. Defaults to "save/coverage".
+        html (bool, optional): Option for viewing as HTML. Defaults to True.
     """
     # Run coverage using pytest, then record results to docs.
     subprocess.run(["coverage", "run", "-m", "pytest"])
     subprocess.run(["coverage", "html", "-d", local_path])
     subprocess.run(["coverage", "report", "-m"])
 
-    # Open in a browser and view results
-    cwd = os.getcwd()
-    url = f"file://{cwd}/{local_path}/index.html"
-    webbrowser.get(browser).open(url)
+    if html:
+        # Open in a browser and view results
+        cwd = os.getcwd()
+        url = f"file://{cwd}/{local_path}/index.html"
+        webbrowser.get(browser).open(url)
+    
 
 
-def profile():
-    """Profiles your selected code using scalene.  Works with `multiprocessing` package but not `Ray`."""
-
-    subprocess.run(["scalene", "-m", "pytest"])
-
-
-def autodoc(browser: str | None = None, local_path: str = "save/pdocs", debug: bool = True):
+def pdoc(browser: str | None = None, local_path: str = "save/pdocs", html: bool = True):
     """Generate automatic documentation.
 
     Args:
         browser (str | None, optional): Possible arguments include `Chrome`, `Firefox`, `Safari`.  If no browser is specified it will open using your system's default browser. Defaults to None.
         local_path (str, optional): The local path to save the files. Defaults to "save/pdocs".
+        html (bool, optional): Option for viewing as HTML. Defaults to True.
     """
 
     subprocess.run(["mkdir", "-p", f"{local_path}/docs"])
@@ -63,7 +77,7 @@ def autodoc(browser: str | None = None, local_path: str = "save/pdocs", debug: b
         ]
     )
 
-    if debug:
+    if html:
         # Open in a browser and view results
         cwd = os.getcwd()
         url = f"file://{cwd}/{local_path}/index.html"

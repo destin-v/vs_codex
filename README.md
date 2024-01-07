@@ -14,14 +14,14 @@
 </p>
 
 <p align="center">
-  <a href="https://pre-commit.com">                                         <img alt="pre-commit" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit"> </a>
-  <a href="https://destin-v.github.io/vs_codex/src.html">                   <img alt="pdoc"       src="https://github.com/destin-v/vs_codex/actions/workflows/static.yml/badge.svg">  </a>
-  <a href="https://github.com/destin-v/vs_codex/actions/workflows/ci.yml">  <img alt="pytest"     src="https://github.com/destin-v/vs_codex/actions/workflows/ci.yml/badge.svg">      </a>
+  <a href="https://pre-commit.com">                                             <img alt="pre-commit" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit"> </a>
+  <a href="https://destin-v.github.io/vs_codex/src.html">                       <img alt="pdoc"       src="https://github.com/destin-v/vs_codex/actions/workflows/pdoc.yml/badge.svg">  </a>
+  <a href="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml">  <img alt="pytest"     src="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml/badge.svg">      </a>
 </p>
 
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
 
-# 📦 VsCode Recommended Extensions                                                                                                                                                           | c    | d    |
+# 📦 VsCode Recommended Extensions 
 * [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
 * [Back & Forth](https://marketplace.visualstudio.com/items?itemName=nick-rudenko.back-n-forth)
 * [Black](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
