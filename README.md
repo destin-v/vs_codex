@@ -8,20 +8,20 @@
 </p>
 
 <p align="center">
-  <a href="https://devguide.python.org/versions/">              <img alt="" src="https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white"></a>
-  <a href="https://black.readthedocs.io/en/stable/index.html">  <img alt="" src="https://img.shields.io/badge/code%20style-black-blue"></a>
-  <img alt="" src="https://img.shields.io/badge/license-mit-mediumturquoise">
+  <a href="https://devguide.python.org/versions/">              <img alt="" src="https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white"> </a>
+  <a href="https://black.readthedocs.io/en/stable/index.html">  <img alt="" src="https://img.shields.io/badge/code%20style-black-blue">                       </a>
+  <a href="https://mit-license.org">                            <img alt="" src="https://img.shields.io/badge/license-mit-mediumturquoise">                   </a>
 </p>
 
 <p align="center">
-  <a href="https://pre-commit.com">                                         <img alt="" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit"></a>
-  <a href="https://destin-v.github.io/vs_codex/src.html">                   <img alt="" src="https://github.com/destin-v/vs_codex/actions/workflows/static.yml/badge.svg"></a>
-  <a href="https://github.com/destin-v/vs_codex/actions/workflows/ci.yml">  <img alt="" src="https://github.com/destin-v/vs_codex/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://pre-commit.com">                                         <img alt="pre-commit" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit"> </a>
+  <a href="https://destin-v.github.io/vs_codex/src.html">                   <img alt="pdoc"       src="https://github.com/destin-v/vs_codex/actions/workflows/static.yml/badge.svg">  </a>
+  <a href="https://github.com/destin-v/vs_codex/actions/workflows/ci.yml">  <img alt="ci"         src="https://github.com/destin-v/vs_codex/actions/workflows/ci.yml/badge.svg">      </a>
 </p>
 
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
 
-# 📦 VsCode Recommended Extensions
+# 📦 VsCode Recommended Extensions                                                                                                                                                           | c    | d    |
 * [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
 * [Back & Forth](https://marketplace.visualstudio.com/items?itemName=nick-rudenko.back-n-forth)
 * [Black](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
