@@ -14,10 +14,9 @@
 </p>
 
 <p align="center">
-  <a href="https://pre-commit.com">                             <img alt="" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit"></a>
-  <a href="https://pytest.org">                                 <img alt="" src="https://img.shields.io/badge/pytest-enabled-brightgreen?logo=pytest&logoColor=white"></a>
-  <a href="https://pdoc.dev">                                   <img alt="" src="https://img.shields.io/badge/pdoc-enabled-brightgreen?logo=googledocs&logoColor=white"></a>
-  <img alt="" src="https://github.com/destin-v/vs_codex/actions/workflows/ci.yml/badge.svg">
+  <a href="https://pre-commit.com">                                         <img alt="" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit"></a>
+  <a href="https://destin-v.github.io/vs_codex/src.html">                   <img alt="" src="https://github.com/destin-v/vs_codex/actions/workflows/static.yml/badge.svg"></a>
+  <a href="https://github.com/destin-v/vs_codex/actions/workflows/ci.yml">  <img alt="" src="https://github.com/destin-v/vs_codex/actions/workflows/ci.yml/badge.svg"></a>
 </p>
 
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
