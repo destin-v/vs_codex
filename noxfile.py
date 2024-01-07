@@ -59,3 +59,11 @@ def autodoc(session):
 
     session.run("poetry", "install", "--with=dev", external=True)
     ci_autodoc()
+
+
+@nox.session
+def publish(session):
+    """Generate pdocs."""
+
+    session.run("poetry", "install", "--with=dev", external=True)
+    ci_autodoc(debug=False)

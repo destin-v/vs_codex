@@ -35,7 +35,7 @@ def profile():
     subprocess.run(["scalene", "-m", "pytest"])
 
 
-def autodoc(browser: str | None = None, local_path: str = "save/pdocs"):
+def autodoc(browser: str | None = None, local_path: str = "save/pdocs", debug: bool = True):
     """Generate automatic documentation.
 
     Args:
@@ -63,7 +63,8 @@ def autodoc(browser: str | None = None, local_path: str = "save/pdocs"):
         ]
     )
 
-    # Open in a browser and view results
-    cwd = os.getcwd()
-    url = f"file://{cwd}/{local_path}/index.html"
-    webbrowser.get(browser).open(url)
+    if debug:
+        # Open in a browser and view results
+        cwd = os.getcwd()
+        url = f"file://{cwd}/{local_path}/index.html"
+        webbrowser.get(browser).open(url)
