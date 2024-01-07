@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Pdocs
 
 on:
   # Runs on pushes targeting the default branch
@@ -22,38 +22,45 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # In the build job we create the static HTML files we want to publish.
   build:
-    #----------------------------------------------
-    # Set the OS and python versions
-    #----------------------------------------------
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        python-version: ["3.10"]
-
     steps:
-    - uses: actions/checkout@v3
-    #----------------------------------------------
-    # Check-out repo and set-up python
-    #----------------------------------------------
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    #----------------------------------------------
-    # Install dependencies
-    #----------------------------------------------
-    - name: Install dependencies
-      run: |
-        python -m pip install nox
-    #----------------------------------------------
-    # Running pdoc
-    #----------------------------------------------
-    - name: Generate pdoc
-      run: |
-        nox -r -s autodoc
+      # Checkout the source repo
+      - name: Checkout source
+        uses: actions/checkout@v4
+      # Setup the environment with specified python version
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      # Install poetry and disable virtual environments
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: false
+          virtualenvs-in-project: false
+          installer-parallel: true
+      # Install all of the dependencies of the repo
+      - name: Install dependencies
+        run: |
+          poetry install --no-interaction --with=dev --no-root
+      # Use nox to generate the document
+      - name: Generate pdoc artifact
+        run: |
+          mkdir -p save/pdocs
+          export PYTHONPATH=/home/runner/work/vs_codex/vs_codex/
+          nox -r -s publish
+      # Upload the artifact to the next job
+      - name: Upload pdoc artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: pdoc artifact
+          path: save
 
+  # In the deploy job we publish the static HTML files to Github Pages.
   deploy:
     needs: [build]
     environment:
@@ -61,15 +68,35 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      # We first need to checkout the repo for the code.
       - name: Checkout
         uses: actions/checkout@v4
+      # Now download the artifact from the previous build for pdoc.
+      - name: Download pdoc artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: pdoc artifact
+          path: save
+      # Now we need to replace the pdoc generated HTML files with the docs/ folder.
+      # Note: Github pages expects all of your HTML static files to reside in docs/
+      - run: |
+          echo "Verifying pdoc artifact was downloaded..."
+          echo "ls -al save/pdocs/"   
+          ls -al save/pdocs
+          echo "Removing old docs folder..."
+          rm -rf docs
+          echo "Copying pdoc into docs folder..."
+          mv save/pdocs docs/
+          echo "Display what is in docs folder..."
+          ls -al docs
+      # We are now ready to upload the docs/ artifact folder to Github pages.
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: 'save/pdocs'
+          path: 'docs'
+      # Once the upload is complete we can deploy
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
