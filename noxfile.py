@@ -4,67 +4,101 @@ Nox creates a new virtual environment for each individual test.  Thus, it is imp
 Useful commands:
 
 ```console
-nox --list              # Lists out all the available sessions
+nox --list                 # Lists out all the available sessions
 nox -r -s pytest           # Run pytests
 nox -r -s pytest_cov       # Run pytests with coverage report
 nox -r -s coverage         # Run coverage (stand-alone)
 nox -r -s scalene          # Profile the code
 nox -r -s pdoc             # Generate documentation
+nox -r -s show_pdoc        # View HTML of pdoc
 
-nox                     # Run all sessions
+nox                        # Run all sessions
 ```
 
 """
+from dataclasses import dataclass
+
 import nox
 
-from src.ci.utils import pdoc as ci_pdoc
-from src.ci.utils import coverage as ci_coverage
-from src.ci.utils import pytest_cov as ci_pytest_cov
+from src.ci.utils import view_html
+
+
+@dataclass
+class config:
+    pytest_cov_path: str = "save/pytest-cov"
+    coverage_path: str = "save/coverage"
+    pdoc_path: str = "save/pdocs"
 
 
 @nox.session
-def pytest(session):
+def pytest(session: nox.Session):
     """Run PyTests."""
 
-    session.run("poetry", "install", "--with=dev", external=True)
+    session.run("poetry", "install", "--with=dev", "--no-root")
     session.run("pytest", "-v")
 
 
 @nox.session
-def pytest_cov(session):
-    """Run PyTests with coverage.  This generates a HTML report."""
+def pytest_cov(session: nox.Session):
+    """Run PyTests with coverage."""
 
-    session.run("poetry", "install", "--with=dev", external=True)
-    ci_pytest_cov(html=True)
+    session.run("poetry", "install", "--with=dev", "--no-root")
+    session.run("pytest", "--cov=./", f"--cov-report=html:{config.pytest_cov_path}")
 
 
 @nox.session
-def coverage(session):
+def coverage(session: nox.Session):
     """Runs coverage pytests"""
 
-    session.run("poetry", "install", "--with=dev", external=True)
-    ci_coverage(html=True)
+    session.run("poetry", "install", "--with=dev", "--no-root")
+    session.run("coverage", "run", "-m", "pytest")
+    session.run("coverage", "html", "-d", config.coverage_path)
+    session.run("coverage", "report", "-m")
 
 
 @nox.session
-def scalene(session):
+def scalene(session: nox.Session):
     """Profiles your selected code using scalene."""
 
-    session.run("poetry", "install", "--with=dev", external=True)
+    session.run("poetry", "install", "--with=dev", "--no-root")
     session.run("scalene", "-m", "pytest")
 
 
 @nox.session
-def pdoc(session):
+def pdoc(session: nox.Session):
     """Generate pdocs."""
 
-    session.run("poetry", "install", "--with=dev", external=True)
-    ci_pdoc(html=True)
+    session.run("poetry", "install", "--with=dev", "--no-root")
+    session.run("mkdir", "-p", f"{config.pdoc_path}/docs")
+    session.run("cp", "-rf", "docs/pics", f"{config.pdoc_path}/docs/")
+    session.run(
+        "pdoc",
+        "-d",
+        "google",
+        "--logo",
+        "https://github.com/destin-v/vs_codex/blob/main/docs/pics/program_logo.png?raw=true",
+        "--logo-link",
+        "https://github.com/destin-v/vs_codex",
+        "--math",
+        "--footer-text",
+        "Author: W. Li",
+        "--output-directory",
+        config.pdoc_path,
+        "src",
+    )
 
 
 @nox.session
-def deploy_pdoc(session):
-    """This process is designed to generate a set of artifacts for deployment.  It is designed to operate with Github actions."""
+def show_pytest_cov(session: nox.Session):
+    """Show pytest coverage in HTML."""
 
-    session.run("poetry", "install", "--with=dev", external=True)
-    ci_pdoc(html=False)
+    pytest_cov(session)
+    view_html(config.pdoc_path)
+
+
+@nox.session
+def show_pdoc(session: nox.Session):
+    """Show pdoc in HTML."""
+
+    pdoc(session)
+    view_html(config.pdoc_path)

@@ -52,7 +52,7 @@ jobs:
         run: |
           mkdir -p save/pdocs
           export PYTHONPATH=/home/runner/work/vs_codex/vs_codex/
-          nox -r -s deploy_pdoc
+          nox -r -s pdoc
       # Upload the artifact to the next job
       - name: Upload pdoc artifact
         uses: actions/upload-artifact@v3
@@ -81,7 +81,7 @@ jobs:
       # Note: Github pages expects all of your HTML static files to reside in docs/
       - run: |
           echo "Verifying pdoc artifact was downloaded..."
-          echo "ls -al save/pdocs/"   
+          echo "ls -al save/pdocs/"
           ls -al save/pdocs
           echo "Removing old docs folder..."
           rm -rf docs
