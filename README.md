@@ -1,5 +1,7 @@
 <p align="center">
-  <a href="https://github.com/destin-v"><img src="https://drive.google.com/uc?export=view&id=1yFte-RASCcF1ahkYg1Jybavi-gWje8kp" alt="drawing" width="500"/></a>
+  <a href="https://github.com/destin-v">
+    <img src="https://drive.google.com/uc?export=view&id=1yFte-RASCcF1ahkYg1Jybavi-gWje8kp" alt="drawing" width="500"/>
+  </a>
 </p>
 
 # 📒 Description
@@ -8,37 +10,90 @@
 </p>
 
 <p align="center">
-  <a href="https://devguide.python.org/versions/">              <img alt="" src="https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white"> </a>
-  <a href="https://black.readthedocs.io/en/stable/index.html">  <img alt="" src="https://img.shields.io/badge/code%20style-black-blue">                       </a>
-  <a href="https://mit-license.org">                            <img alt="" src="https://img.shields.io/badge/license-mit-mediumturquoise">                   </a>
+  <a href="https://devguide.python.org/versions/">
+    <img alt="python-version" src="https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white">
+  </a>
+  <a href="https://black.readthedocs.io/en/stable/index.html">
+    <img alt="code-style" src="https://img.shields.io/badge/code%20style-black-blue">
+  </a>
+  <a href="https://mit-license.org">
+    <img alt="license" src="https://img.shields.io/badge/license-mit-mediumturquoise">
+  </a>
 </p>
 
 <p align="center">
-  <a href="https://pre-commit.com">                                             <img alt="pre-commit" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit"> </a>
-  <a href="https://destin-v.github.io/vs_codex/src.html">                       <img alt="pdoc"       src="https://github.com/destin-v/vs_codex/actions/workflows/pdoc.yml/badge.svg">  </a>
-  <a href="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml">  <img alt="pytest"     src="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml/badge.svg">      </a>
+  <a href="https://pre-commit.com">
+    <img alt="pre-commit" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit">
+  </a>
+  <a href="https://destin-v.github.io/vs_codex/src.html">
+    <img alt="pdoc" src="https://github.com/destin-v/vs_codex/actions/workflows/pdoc.yml/badge.svg">
+  </a>
+  <a href="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml">
+    <img alt="pytest" src="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml/badge.svg">
+  </a>
 </p>
 
 This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
 
-# 📦 VsCode Recommended Extensions 
-* [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
-* [Back & Forth](https://marketplace.visualstudio.com/items?itemName=nick-rudenko.back-n-forth)
-* [Black](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
-* [Chronicler](https://marketplace.visualstudio.com/items?itemName=arcsine.chronicler)
-* [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-* [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-* [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
-* [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
-* [Markdown Extended](https://marketplace.visualstudio.com/items?itemName=jebbs.markdown-extended)
-* [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-* [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
-* [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-* [Python Test Explorer for Visual Studio](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter)
-* [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
-* [Remote - SSH: Editing Configuration Files](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
-* [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
-* [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)
+# 📦 VsCode Recommended Extensions
+
+
+<details>
+  <summary>Code</summary>
+
+  * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+</details>
+
+<details>
+  <summary>Documentation</summary>
+
+  * [Automatic Doc String](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
+  * [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+  * [Markdown Extended](https://marketplace.visualstudio.com/items?itemName=jebbs.markdown-extended)
+</details>
+
+<details>
+  <summary>Linting / Formatting</summary>
+
+  * [Black](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
+  * [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+</details>
+
+<details>
+  <summary>Testing</summary>
+
+  * [Python Test Explorer for Visual Studio](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter)
+  * [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)
+</details>
+
+<details>
+  <summary>Configuration Control</summary>
+
+  * [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+</details>
+
+<details>
+  <summary>Containers</summary>
+
+  * [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+  * [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+</details>
+
+<details>
+  <summary>Remote</summary>
+
+  * [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+  * [Remote - SSH: Editing Configuration Files](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+  * [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
+</details>
+
+<details>
+  <summary>Misc</summary>
+
+  * [Back & Forth](https://marketplace.visualstudio.com/items?itemName=nick-rudenko.back-n-forth)
+  * [Chronicler](https://marketplace.visualstudio.com/items?itemName=arcsine.chronicler)
+  * [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+  </details>
 
 # 🅿 Pre-commit
 Always update your pre-commit to use the latest versions prior to starting a project.
