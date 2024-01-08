@@ -43,10 +43,6 @@ jobs:
           virtualenvs-create: false
           virtualenvs-in-project: false
           installer-parallel: true
-      # Install all of the dependencies of the repo
-      - name: Install dependencies
-        run: |
-          poetry install --no-interaction --with=dev --no-root
       # Use nox to generate the document
       - name: Generate pdoc artifact
         run: |
