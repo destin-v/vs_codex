@@ -43,6 +43,10 @@ jobs:
           virtualenvs-create: false
           virtualenvs-in-project: false
           installer-parallel: true
+      # Install nox
+      - name: Install dependencies
+        run: |
+          pip install nox
       # Use nox to generate the document
       - name: Generate pdoc artifact
         run: |
