@@ -94,6 +94,9 @@ pre-commit autoupdate
 # 🎯 Version Control
 The `pyproject.toml` defines a set of packages with the allowable ranges that you expect to install.  However, poetry builds a `poetry.lock` that defines the specific versions used by your project.  If you want to ensure everyone on your team installs the same version you will need to commit the `poetry.lock` file to your repo.
 
+# 🅰 Font
+You will need to install [**Nerd Fonts**]([containers/README.md](https://www.nerdfonts.com/)) MesloLGLDZ Nerd Font.  This will be used to display glyphs and icons for all of your terminals.
+
 # ✨ Theme
 To customize your themes you need to set them in your settings.json file.  To identify items you want to change in the editor, you will have to use the inspector:
 
