@@ -1,21 +1,3 @@
-"""
-Nox creates a new virtual environment for each individual test.  Thus, it is important for to install all the packages needed for testing.  When using Nox, it will by default grab the current python version available in your environment and run testing with it.
-
-Useful commands:
-
-```console
-nox --list                 # Lists out all the available sessions
-nox -r -s pytest           # Run pytests
-nox -r -s pytest_cov       # Run pytests with coverage report
-nox -r -s coverage         # Run coverage (stand-alone)
-nox -r -s scalene          # Profile the code
-nox -r -s pdoc             # Generate documentation
-nox -r -s show_pdoc        # View HTML of pdoc
-
-nox                        # Run all sessions
-```
-
-"""
 from dataclasses import dataclass
 
 import nox
@@ -25,6 +7,8 @@ from src.ci.utils import view_html
 
 @dataclass
 class config:
+    """Nox creates a new virtual environment for each individual test.  Thus, it is important for to install all the packages needed for testing.  When using Nox, it will by default grab the current python version available in your environment and run testing with it."""
+
     pytest_cov_path: str = "save/pytest-cov"
     coverage_path: str = "save/coverage"
     pdoc_path: str = "save/pdocs"

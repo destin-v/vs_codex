@@ -21,7 +21,7 @@
   <a href="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml">      <img alt="pytest" src="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml/badge.svg"></a>
 </p>
 
-This is a development template designed with VsCode configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
+This is a development template designed with Vs Code configurations, development containers, testing/profiling utilities, and automatic documentation.  The code is designed to run with Black to perform automatic formatting and uses pre-commit to check all commits.
 
 # 📦 VsCode Recommended Extensions
 
@@ -128,9 +128,25 @@ Several CI tools have been included with this codex:
 * **pdoc**: automatic documentation software
 * **scalene**: profiler for evaluating performance
 
-The `noxfile.py` provides an example of how to run each of these.  The `src/ci` folder contains common CI modules.  For an explaination on how to properly setup multiple versions of Python to run with Nox see [**here**](https://sethmlarson.dev/nox-pyenv-all-python-versions).
+The `noxfile.py` provides an example of how to run each of these:
 
-All of the CI tools listed above can generate a `HTML` website.  You can upload the folders to a temporary website to view its contents:
+```bash
+    nox --list                 # Lists out all the available sessions
+    nox -r -s pytest           # Run pytests
+    nox -r -s pytest_cov       # Run pytests with coverage report
+    nox -r -s coverage         # Run coverage (stand-alone)
+    nox -r -s scalene          # Profile the code
+    nox -r -s pdoc             # Generate documentation
+    nox -r -s show_pdoc        # View HTML of pdoc
+
+    nox                        # Run all sessions
+```
+
+> [!NOTE]
+> For an explanation on how to properly setup multiple versions of Python to run with Nox see [**here**](https://sethmlarson.dev/nox-pyenv-all-python-versions).
+
+## Smokeshow
+All `HTML` files can be hosted on a website.
 
 ```bash
 smokeshow upload path/to/folder  # this will generate a tempoary html link
@@ -138,7 +154,7 @@ smokeshow upload path/to/folder  # this will generate a tempoary html link
 
 # 🧸 Misc
 ## Tab Removal
-In general you should never need to have tabs.  Vscode provides an ordered list of all files and windows you have opened sorted alphabetically.  This is a much better way of accessing files.
+In general you should never need to have tabs.  VS Code provides an ordered list of all files and windows you have opened sorted alphabetically.  This is a much better way of accessing files.
 
 * **Cmd-P** # shows all tabs
 * Settings › Workbench › Editor: Show Tabs [OFF]
@@ -151,7 +167,7 @@ To have TestExplorer UI properly detect your tests by pressing and selecting:
 
 * **Shift-Cmd-P** › Python: Configure Tests › Pytests › <target_dir>
 
-For a full explaination on how to properly setup the TestExplorer UI see [**here**](https://graycode.ie/blog/how-to-set-up-testing-explorer-with-python-pytest-in-vscode/).
+For a full explanation on how to properly set up the TestExplorer UI see [**here**](https://graycode.ie/blog/how-to-set-up-testing-explorer-with-python-pytest-in-vscode/).
 </details>
 
 <details>
