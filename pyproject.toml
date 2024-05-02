@@ -37,11 +37,12 @@ exclude = '''
 name = "vs_codex"
 version = "0.1.0"
 description = ""
-authors = ["W. Li <william.li1@me.com>"]
+authors = ["DestinV <peddky8e@duck.com>"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
+poetry = "^1.8"
 python = "^3.10"
 rich = "^13.7.0"
 typer = {extras = ["all"], version = "^0.9.0"}
