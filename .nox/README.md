@@ -1,4 +1,5 @@
 # 🧪 Nox
+
 Nox is the spiritual successor to Tox for running scripts in controlled environments.
 
 * **coverage**: provides code coverage analysis

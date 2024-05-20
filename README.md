@@ -33,7 +33,7 @@ Make sure to replace the following keywords in this repo:
 | Variable | User Defined |
 | -------- | ------------ |
 | vs_codex | project name |
-| destin-v | github name  |
+| destin-v | GitHub name  |
 | W. Li    | author name  |
 
 </center>

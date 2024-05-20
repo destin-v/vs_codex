@@ -37,7 +37,7 @@ This is the standard method for adding an overlay to an Apptainer image.
 apptainer overlay create --size 1024 <container_id>.sif     # adds 1GB to image
 ```
 
-You can use the Linux `dd` tool to create file storage files and then attach them Apptainer images.  The `dd` tool treats file storage volumes on Linux systems like indepedent files.  You provide `dd` with a input file `if=<file>` and an output file `of=<file>` with the batch size `bs` and counts to determine the total size.  The storage volume file is then attached to the Apptainer image.
+You can use the Linux `dd` tool to create file storage files and then attach them Apptainer images.  The `dd` tool treats file storage volumes on Linux systems like independent files.  You provide `dd` with a input file `if=<file>` and an output file `of=<file>` with the batch size `bs` and counts to determine the total size.  The storage volume file is then attached to the Apptainer image.
 ```bash
 dd if=/dev/zero of=overlay.img bs=1M count=1000 && mkfs.ext3 -d overlay overlay.img
 sudo apptainer shell --overlay overlay.img <container_id>.sif
