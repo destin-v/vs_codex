@@ -4,6 +4,8 @@
 .DS_Store
 profile.html
 profile.json
+*.doctree
+*.pickle
 
 # Folders to ignore
 __pycache__

@@ -1,18 +1,14 @@
-# ♾️ Continuous Integration (CI) Tools
+# ♾️ Continuous Integration / Continuous Development (CI/CD)
 
 ## Workflows
 Github workflows with continuous integration is included.  The Github workflows send their tasks to Github runners by default.  If you want to route jobs to your **self-hosted** runners make sure to add a **label**.  The steps are:
 
-> [!NOTE]
-Settings › Actions › Runners › Self Hosted Runner › Create Label
 
-<p align="center">
-  <img src="../docs/pics/self_hosted_runner.png" alt="drawing" width="800"/>
-</p>
+> Settings › Actions › Runners › Self Hosted Runner › Create Label
 
-In the above example, you can now have your workflows send jobs to `macos-latest` runner by specifying the following in the workflow.yml file:
+You can now have your workflows send jobs to `macos-latest` runner by specifying the following in the workflow.yml file:
 
-```yml
+```yaml
 jobs:
   test:
     # Set the OS and python versions
@@ -20,7 +16,7 @@ jobs:
 ```
 
 > [!IMPORTANT]
-If your self-hosted runner is given a label that also matches a Github runner (i.e. `ubuntu-latest`) then your job can be scheduled by self-hosted or Github runners.  This is useful for situations where you want the job to have the option of running on either kind of runners.
+> If your self-hosted runner is given a label that also matches a Github runner (i.e. `ubuntu-latest`) then your job can be scheduled by self-hosted or Github runners.  This is useful for situations where you want the job to have the option of running on either kind of runners.
 
 ## Badges
 The badge at the top of the README.md will update its status to display whether the CI process succeeds/fails.  Modify it to point to your own repo when starting a new project.

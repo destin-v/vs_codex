@@ -12,6 +12,7 @@ class config:
     pytest_cov_path: str = "save/pytest-cov"
     coverage_path: str = "save/coverage"
     pdoc_path: str = "save/pdocs"
+    sphinx_path: str = "docs/build/html"
 
 
 @nox.session
@@ -86,3 +87,16 @@ def show_pdoc(session: nox.Session):
 
     pdoc(session)
     view_html(config.pdoc_path)
+
+
+@nox.session
+def show_sphinx(session: nox.Session):
+    """Show Sphinx in HTML."""
+
+    session.run("poetry", "install", "--with=dev", "--no-root")
+    session.run("sphinx-apidoc", "-o", "docs/source/pages/api", "src")
+    session.chdir("docs")
+    session.run("make", "clean", external=True)
+    session.run("make", "html", external=True)
+    session.chdir("../")
+    view_html(config.sphinx_path)
