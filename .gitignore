@@ -13,5 +13,6 @@ __pycache__
 .nox
 .pytest_cache
 docs/source/pages/api
+docs/source/_static
 html
 save
