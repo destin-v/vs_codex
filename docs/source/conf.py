@@ -38,7 +38,6 @@ autosummary_imported_members: bool = True
 autosummary_generate_overwrite: bool = True
 exclude_patterns: list[str] = []
 myst_enable_extensions: list[str] = ["colon_fence"]
-pygments_style: str = "dracula"
 templates_path: list[str] = ["_templates"]
 
 
