@@ -38,6 +38,7 @@ def pytest_cov(session: nox.Session):
 
     session.run("poetry", "install", "--with=dev", "--no-root")
     session.run("pytest", "--cov=./", f"--cov-report=html:{config.coverage_pytest_path}")
+    session.run("mv", ".coverage", config.coverage_pytest_path)
 
 
 @nox.session
