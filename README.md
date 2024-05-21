@@ -66,8 +66,8 @@ ssh <user_id>@<host_ip>           # Log into the host
 ```
 
 # 🐳 Container Development
-* [**Docker**](.devcontainer/README.md)
-* [**Apptainer**](containers/README.md)
+* [**Docker**](containers/docker/README.md)
+* [**Apptainer**](containers/apptainer/README.md)
 
 ## Smokeshow
 All `HTML` files can be hosted on a website.

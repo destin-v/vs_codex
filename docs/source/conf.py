@@ -38,7 +38,6 @@ autosummary_imported_members: bool = True
 autosummary_generate_overwrite: bool = True
 exclude_patterns: list[str] = []
 myst_enable_extensions: list[str] = ["colon_fence"]
-pygments_style: str = "dracula"
 templates_path: list[str] = ["_templates"]
 
 
@@ -53,4 +52,33 @@ html_theme_options: dict = {
     "use_sidenotes": True,  # allow Edward Tufte style side-nodes
     "repository_url": "https://github.com/destin-v/vs_codex",  # repo link
     "use_repository_button": True,
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/destin-v",
+            "icon": "fa-brands fa-square-github",
+            "type": "fontawesome",
+            # fontawesome: https://fontawesome.com/search?o=r&m=free
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/william-li1",
+            "icon": "fa-brands fa-linkedin",
+        },
+        {
+            "name": "Buy Me Coffee",
+            "url": "https://www.paypal.me/WilliamLi60?country.x=US&locale.x=en_US",
+            "icon": "fa-solid fa-mug-saucer",
+        },
+        {
+            "name": "Book Theme",
+            "url": "https://sphinx-book-theme.readthedocs.io/en/stable/index.html",
+            "icon": "fa-solid fa-book",
+        },
+        {
+            "name": "Book Theme Demo",
+            "url": "https://sphinx-themes.org/sample-sites/sphinx-book-theme/",
+            "icon": "fa-solid fa-crop-simple",
+        },
+    ],
 }
