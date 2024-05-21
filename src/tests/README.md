@@ -14,13 +14,11 @@ Placed a `tests` folder underneath every `module` that you want to create tests 
 
 ```
 project
-│
 └───src
 │   └───tests
-│       │   __init__.py
-│       │   unit_test.py
-│
+│       └─── __init__.py
+│       └─── unit_test.py
 └───tests
-    │   __init__.py
-    │   integration_test.py
+    └─── __init__.py
+    └─── integration_test.py
 ```
