@@ -38,7 +38,7 @@ def pytest_cov(session: nox.Session):
 
     session.run("poetry", "install", "--with=dev", "--no-root")
     session.run("pytest", "--cov=./", f"--cov-report=html:{config.coverage_pytest_path}")
-    session.run("mv", ".coverage", config.coverage_pytest_path)
+    session.run("mv", ".coverage", config.coverage_pytest_path, external=True)
 
 
 @nox.session
@@ -53,7 +53,7 @@ def coverage(session: nox.Session):
     session.run("coverage", "run", "-m", "pytest")
     session.run("coverage", "html", "-d", config.coverage_module_path)
     session.run("coverage", "report", "-m")
-    session.run("mv", ".coverage", config.coverage_module_path)
+    session.run("mv", ".coverage", config.coverage_module_path, external=True)
 
 
 @nox.session
@@ -67,8 +67,8 @@ def scalene(session: nox.Session):
     session.run("poetry", "install", "--with=dev", "--no-root")
     session.run("scalene", "-m", "pytest")
     session.run("mkdir", "-p", f"{config.scalene_path}")
-    session.run("mv", "profile.html", f"{config.scalene_path}/profile.html")
-    session.run("mv", "profile.json", f"{config.scalene_path}/profile.json")
+    session.run("mv", "profile.html", f"{config.scalene_path}/profile.html", external=True)
+    session.run("mv", "profile.json", f"{config.scalene_path}/profile.json", external=True)
 
 
 @nox.session
