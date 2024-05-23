@@ -61,11 +61,6 @@ html_theme_options: dict = {
             # fontawesome: https://fontawesome.com/search?o=r&m=free
         },
         {
-            "name": "LinkedIn",
-            "url": "https://www.linkedin.com/in/william-li1",
-            "icon": "fa-brands fa-linkedin",
-        },
-        {
             "name": "Buy Me Coffee",
             "url": "https://www.paypal.me/WilliamLi60?country.x=US&locale.x=en_US",
             "icon": "fa-solid fa-mug-saucer",
