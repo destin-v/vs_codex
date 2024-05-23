@@ -66,9 +66,20 @@ def scalene(session: nox.Session):
 
     session.run("poetry", "install", "--with=dev", "--no-root")
     session.run("scalene", "-m", "pytest")
-    session.run("mkdir", "-p", f"{config.scalene_path}")
-    session.run("mv", "profile.html", f"{config.scalene_path}/profile.html", external=True)
-    session.run("mv", "profile.json", f"{config.scalene_path}/profile.json", external=True)
+    session.run("mkdir", "-p", f"{config.scalene_path}", external=True)
+    session.run("sleep", ".5", external=True)
+    session.run(
+        "mv",
+        "profile.html",
+        f"{config.scalene_path}/profile.html",
+        external=True,
+    )
+    session.run(
+        "mv",
+        "profile.json",
+        f"{config.scalene_path}/profile.json",
+        external=True,
+    )
 
 
 @nox.session
@@ -80,8 +91,8 @@ def pdoc(session: nox.Session):
     """
 
     session.run("poetry", "install", "--with=dev", "--no-root")
-    session.run("mkdir", "-p", f"{config.pdoc_path}/docs")
-    session.run("cp", "-rf", "docs/pics", f"{config.pdoc_path}/docs/")
+    session.run("mkdir", "-p", f"{config.pdoc_path}/docs", external=True)
+    session.run("cp", "-rf", "docs/pics", f"{config.pdoc_path}/docs/", external=True)
     session.run(
         "pdoc",
         "-d",
