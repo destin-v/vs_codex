@@ -1,5 +1,6 @@
+###############
 🛠️ Installation
-===============
+###############
 
 Code
 ----
@@ -12,7 +13,7 @@ To install:
 .. note::
    :class: margin
 
-    Use this if you want to install all of the development packages as well.
+   Use this if you want to install all of the development packages as well.
 
 .. code-block:: console
 

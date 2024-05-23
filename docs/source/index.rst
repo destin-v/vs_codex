@@ -1,8 +1,3 @@
-.. vs_codex documentation master file, created by
-   sphinx-quickstart on Wed May 15 14:54:43 2024.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 .. epigraph::
    “Documentation is a love letter that you write to your future self.”
 
@@ -11,15 +6,13 @@
 .. centered::
     |Li Productions|
 
-====================================
-
 .. centered::
     |Program Logo|
 
 .. centered::
     |Python Version| |Github| |Sphinx| |Style|
 
-Description of your project goes here. [#]_
+**TODO:** Description of your project goes here. [#]_
 
 .. toctree::
    :maxdepth: 1
@@ -29,7 +22,8 @@ Description of your project goes here. [#]_
    pages/installation
    pages/user_guide
    pages/development
-
+   pages/metrics
+   pages/authors
 
 .. toctree::
    :maxdepth: 1
@@ -38,16 +32,15 @@ Description of your project goes here. [#]_
    pages/references
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex` [#]_
 * :ref:`search`
 
-References
-==========
-* `Adding Markdown to Sphinx <https://github.com/sphinx-doc/sphinx/issues/7000#issuecomment-1006645012>`_
-
+External
+--------
+* `Pdoc <_static/pdocs/index.html>`_
 
 ..
    Backlinks and references
@@ -68,7 +61,6 @@ References
     image:: https://img.shields.io/badge/code%20style-black-blue
     :target: https://black.readthedocs.io/en/stable/index.html
 
-
 ..
     Images
 
@@ -78,7 +70,7 @@ References
     :target: https://github.com/destin-v
 
 .. |Program Logo|
-    image:: ../../pics/program_logo.png
+    image:: ../pics/program_logo.png
     :width: 150
 
 ..
