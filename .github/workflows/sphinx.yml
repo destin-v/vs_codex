@@ -91,7 +91,7 @@ jobs:
           path: docs/build/html/
       # Note: Github pages expects all of your HTML static files to reside in docs/
       - name: Display structure of downloaded files
-        run: ls -al docs
+        run: ls -al
         working-directory: docs/build/html/
       # We are now ready to upload the artifact folder to Github pages.
       - name: Setup Pages
