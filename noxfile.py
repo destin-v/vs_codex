@@ -164,5 +164,4 @@ def build(session: nox.Session):
     coverage(session)
     pdoc(session)
     pytest_cov(session)
-    scalene(session)
     sphinx(session)
