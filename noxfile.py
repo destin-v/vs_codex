@@ -65,7 +65,7 @@ def scalene(session: nox.Session):
     """
 
     session.run("poetry", "install", "--with=dev", "--no-root")
-    session.run("scalene", "-m", "pytest")
+    session.run("scalene", "--web", "-m", "pytest")
     session.run("mkdir", "-p", f"{config.scalene_path}", external=True)
     session.run("mv", "profile.html", config.scalene_path, external=True)
     session.run("mv", "profile.json", config.scalene_path, external=True)
