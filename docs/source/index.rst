@@ -23,6 +23,7 @@
    pages/user_guide
    pages/development
    pages/metrics
+   pages/authors
 
 .. toctree::
    :maxdepth: 1
