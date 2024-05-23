@@ -6,12 +6,18 @@ profile.html
 profile.json
 *.doctree
 *.pickle
+*.html
 
-# Folders to ignore
+# Tool build directories
 __pycache__
 .mypy_cache
 .nox
 .pytest_cache
-docs/source/pages/api
-html
+
+# Folders to ignore
 save
+
+# Sphinx build files
+docs/build
+docs/source/_static/pdocs
+docs/source/pages/api
