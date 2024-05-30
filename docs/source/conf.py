@@ -40,40 +40,54 @@ exclude_patterns: list[str] = []
 myst_enable_extensions: list[str] = ["colon_fence"]
 templates_path: list[str] = ["_templates"]
 
+# -- CSS Style Sheets --------------------------------------------------------
+# https://docs.readthedocs.io/en/stable/guides/adding-custom-css.html
+
+# These folders are copied to the documentation's HTML output
+html_static_path: list[str] = ["_static"]
+
+# These paths are either relative to html_static_path
+# or fully qualified paths (eg. https://...)
+html_css_files: list[str] = [
+    "css/custom.css",
+]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+# fontawesome: https://fontawesome.com/search?o=r&m=free
 
-html_title = "vs_codex"
 html_theme: str = "sphinx_book_theme"
-html_static_path: list[str] = ["_static"]
-# html_logo: str = "../pics/program_logo.png"
 html_theme_options: dict = {
     "use_sidenotes": True,  # allow Edward Tufte style side-nodes
     "repository_url": "https://github.com/destin-v/vs_codex",  # repo link
     "use_repository_button": True,
+    "logo": {
+        "text": "My awesome documentation",
+        "image_light": "_static/logo.png",
+        "image_dark": "_static/logo.png",
+    },
     "icon_links": [
         {
             "name": "GitHub",
             "url": "https://github.com/destin-v",
             "icon": "fa-brands fa-square-github",
             "type": "fontawesome",
-            # fontawesome: https://fontawesome.com/search?o=r&m=free
-        },
-        {
-            "name": "Buy Me Coffee",
-            "url": "https://www.paypal.me/WilliamLi60?country.x=US&locale.x=en_US",
-            "icon": "fa-solid fa-mug-saucer",
         },
         {
             "name": "Book Theme",
             "url": "https://sphinx-book-theme.readthedocs.io/en/stable/index.html",
-            "icon": "fa-solid fa-book",
+            "icon": "fa-regular fa-bookmark",
+            "type": "fontawesome",
         },
         {
             "name": "Book Theme Demo",
             "url": "https://sphinx-themes.org/sample-sites/sphinx-book-theme/",
-            "icon": "fa-solid fa-crop-simple",
+            "icon": "fa-solid fa-hat-wizard",
+            "type": "fontawesome",
         },
     ],
+    # "navbar_start": ["navbar-logo"],
+    # "navbar_center": ["navbar-nav"],
+    # "navbar_end": ["navbar-icon-links"],
+    # "navbar_persistent": ["search-button"],
 }

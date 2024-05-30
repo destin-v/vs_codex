@@ -31,6 +31,7 @@
 
    pages/references
 
+------------------
 Indices and tables
 ------------------
 
@@ -38,6 +39,7 @@ Indices and tables
 * :ref:`modindex` [#]_
 * :ref:`search`
 
+--------
 External
 --------
 * `Pdoc <_static/pdocs/index.html>`_
