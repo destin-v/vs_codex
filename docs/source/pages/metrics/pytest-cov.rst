@@ -1,7 +1,7 @@
 
-##################
-🕵️ Pytest Coverage
-##################
+###############
+Pytest Coverage
+###############
 
 .. raw:: html
     :class: full-width

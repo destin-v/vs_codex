@@ -1,6 +1,6 @@
-##########
-🎶 Metrics
-##########
+#######
+Metrics
+#######
 
 .. toctree::
     :maxdepth: 1

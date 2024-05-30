@@ -1,6 +1,6 @@
-##############
-🖥️ Development
-##############
+###########
+Development
+###########
 
 .. toctree::
     :maxdepth: 1

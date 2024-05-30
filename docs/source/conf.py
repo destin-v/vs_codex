@@ -63,8 +63,8 @@ html_theme_options: dict = {
     "use_repository_button": True,
     "logo": {
         "text": "My awesome documentation",
-        "image_light": "_static/logo.png",
-        "image_dark": "_static/logo.png",
+        "image_light": "_static/logo.svg",
+        "image_dark": "_static/logo.svg",
     },
     "icon_links": [
         {

@@ -14,6 +14,9 @@
 
 **TODO:** Description of your project goes here. [#]_
 
+#################
+Table of Contents
+#################
 .. toctree::
    :maxdepth: 1
    :caption: Getting Started:
@@ -23,25 +26,26 @@
    pages/user_guide
    pages/development
    pages/metrics
-   pages/authors
+
 
 .. toctree::
    :maxdepth: 1
    :caption: References:
 
    pages/references
+   pages/authors
 
-------------------
+##################
 Indices and tables
-------------------
+##################
 
 * :ref:`genindex`
 * :ref:`modindex` [#]_
 * :ref:`search`
 
---------
+########
 External
---------
+########
 * `Pdoc <_static/pdocs/index.html>`_
 
 ..
