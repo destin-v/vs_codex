@@ -171,6 +171,7 @@ def build(session: nox.Session):
     """
 
     # Build external docs
+    scalene(session)
     pytest(session)
     pdoc(session)
     sphinx(session)
