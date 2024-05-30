@@ -2,6 +2,6 @@
     :maxdepth: 1
 
     pytest-summary
-    pytest-cov
+    pytest-coverage
     pytest-allure
     scalene
