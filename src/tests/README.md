@@ -15,6 +15,21 @@ PyTests offers `coverage` support.  When running PyTests with Coverage, it will 
 ```console
 pytest --cov=<repo_path> --cov-report=html:<target_output>
 ```
+
+## Allure
+[Allure](https://allurereport.org/) provides a dashboard that aggregates your pytest results.  Allure provides additional functionality like tagging for your tests to organize them into a tree structure.  In order to use allure, you must install it via Homebrew:
+
+```console
+brew install allure
+```
+
+To create and view an Allure report:
+
+```console
+pytest --alluredir <user_directory>  # run pytests
+allure generate --single-file --output <output_dir> # generate a report (HTML)
+```
+
 ## Design Pattern
 Placed a `tests` folder underneath every `module` that you want to create tests for.  A top level `tests` folder can be included for integration tests that span multiple modules.
 
