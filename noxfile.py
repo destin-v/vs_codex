@@ -9,27 +9,22 @@ from src.ci.utils import view_html
 class config:
     """Nox creates a new virtual environment for each individual test.  Thus, it is important for to install all the packages needed for testing.  When using Nox, it will by default grab the current python version available in your environment and run testing with it."""
 
-    coverage_pytest_path: str = "docs/source/_static/pytest-cov"
-    coverage_module_path: str = "docs/source/_static/coverage"
+    # Pytest
+    pytest_path_allure_html: str = "docs/source/_static/pytest-allure-html"
+    pytest_path_allure_build: str = "docs/source/_static/pytest-allure-build"
+    pytest_path_coverage: str = "docs/source/_static/pytest-coverage"
+    pytest_path_summary: str = "docs/source/_static/pytest-summary"
+
+    # Documentation
     pdoc_path: str = "docs/source/_static/pdocs"
-    scalene_path: str = "docs/source/_static/scalene"
     sphinx_path: str = "docs/build/html"
+
+    # Memory Management
+    scalene_path: str = "docs/source/_static/scalene"
 
 
 @nox.session
 def pytest(session: nox.Session):
-    """Run PyTests.
-
-    Args:
-        session (nox.Session): The current Nox session.
-    """
-
-    session.run("poetry", "install", "--with=dev", "--no-root")
-    session.run("pytest", "-v")
-
-
-@nox.session
-def pytest_cov(session: nox.Session):
     """Run PyTest coverage.
 
     Args:
@@ -37,23 +32,36 @@ def pytest_cov(session: nox.Session):
     """
 
     session.run("poetry", "install", "--with=dev", "--no-root")
-    session.run("pytest", "--cov=./", f"--cov-report=html:{config.coverage_pytest_path}")
-    session.run("mv", ".coverage", config.coverage_pytest_path, external=True)
+    session.run(
+        "pytest",
+        # -------------- Coverage --------------
+        "--cov-config=.nox/.coveragerc",
+        "--cov=./",
+        f"--cov-report=html:{config.pytest_path_coverage}",
+        # -------------- Summary --------------
+        f"--html={config.pytest_path_summary}/index.html",
+        "--self-contained-html",
+        # -------------- Allure --------------
+        f"--alluredir={config.pytest_path_allure_build}",
+    )
 
+    # Allure report generation
+    try:
+        session.run(
+            "allure",
+            "generate",
+            "--single-file",
+            "--clean",
+            "--output",
+            config.pytest_path_allure_html,
+            config.pytest_path_allure_build,
+            external=True,
+        )
+    except Exception:
+        print("Allure report failed to generate, have you installed Allure via homebrew?")
 
-@nox.session
-def coverage(session: nox.Session):
-    """Runs coverage only on specific module.
-
-    Args:
-        session (nox.Session): The current Nox session.
-    """
-
-    session.run("poetry", "install", "--with=dev", "--no-root")
-    session.run("coverage", "run", "-m", "pytest")
-    session.run("coverage", "html", "-d", config.coverage_module_path)
-    session.run("coverage", "report", "-m")
-    session.run("mv", ".coverage", config.coverage_module_path, external=True)
+    # Cleanup
+    session.run("mv", ".coverage", config.pytest_path_coverage, external=True)
 
 
 @nox.session
@@ -117,15 +125,17 @@ def sphinx(session: nox.Session):
 
 
 @nox.session
-def show_pytest_cov(session: nox.Session):
+def show_pytest(session: nox.Session):
     """Show pytest coverage in HTML.
 
     Args:
         session (nox.Session): The current Nox session.
     """
 
-    pytest_cov(session)
-    view_html(config.coverage_pytest_path)
+    pytest(session)
+    view_html(config.pytest_path_summary)
+    view_html(config.pytest_path_coverage)
+    view_html(config.pytest_path_allure_html)
 
 
 @nox.session
@@ -161,7 +171,6 @@ def build(session: nox.Session):
     """
 
     # Build external docs
-    coverage(session)
+    pytest(session)
     pdoc(session)
-    pytest_cov(session)
     sphinx(session)

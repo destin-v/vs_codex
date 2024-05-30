@@ -1,5 +1,7 @@
 .. toctree::
     :maxdepth: 1
 
-    pytest-cov
+    pytest-summary
+    pytest-coverage
+    pytest-allure
     scalene
