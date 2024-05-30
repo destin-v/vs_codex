@@ -11,7 +11,7 @@ profile.json
 # Tool build directories
 __pycache__
 .mypy_cache
-.nox
+
 .pytest_cache
 
 # Folders to ignore
