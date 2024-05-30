@@ -41,13 +41,6 @@ jobs:
       # Checkout the source repo
       - name: Checkout source
         uses: actions/checkout@v4
-      # Install a browser for rendering HTML
-      - name: Install Chrome, Firefox and Git on OS
-        uses: shreyash-Pandey-Katni/Chrome-Firefox-git-install-action@v2
-        with:
-          chrome: true
-          firefox: false
-          git: false
       # Setup the environment with specified python version
       - name: Set up Python 3.10
         uses: actions/setup-python@v5
