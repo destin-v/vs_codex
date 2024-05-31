@@ -34,6 +34,7 @@ def pytest(session: nox.Session):
     session.run("poetry", "install", "--with=dev", "--no-root")
     session.run(
         "pytest",
+        "--verbosity=3",
         # -------------- Coverage --------------
         "--cov-config=.nox/.coveragerc",
         "--cov=./",
@@ -43,6 +44,8 @@ def pytest(session: nox.Session):
         "--self-contained-html",
         # -------------- Allure --------------
         f"--alluredir={config.pytest_path_allure_build}",
+        # -------------- Mem Ray --------------
+        "--memray",
     )
 
     # Allure report generation
@@ -62,21 +65,6 @@ def pytest(session: nox.Session):
 
     # Cleanup
     session.run("mv", ".coverage", config.pytest_path_coverage, external=True)
-
-
-@nox.session
-def scalene(session: nox.Session):
-    """Profiles your selected code using scalene.
-
-    Args:
-        session (nox.Session): The current Nox session.
-    """
-
-    session.run("poetry", "install", "--with=dev", "--no-root")
-    session.run("scalene", "--web", "-m", "pytest")
-    session.run("mkdir", "-p", f"{config.scalene_path}", external=True)
-    session.run("mv", "profile.html", config.scalene_path, external=True)
-    session.run("mv", "profile.json", config.scalene_path, external=True)
 
 
 @nox.session
@@ -171,7 +159,6 @@ def build(session: nox.Session):
     """
 
     # Build external docs
-    scalene(session)
     pytest(session)
     pdoc(session)
     sphinx(session)

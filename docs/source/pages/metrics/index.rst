@@ -4,4 +4,3 @@
     pytest-summary
     pytest-coverage
     pytest-allure
-    scalene
