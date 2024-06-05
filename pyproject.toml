@@ -48,22 +48,27 @@ rich = "^13.7.0"
 typer = {extras = ["all"], version = "^0.9.0"}
 
 [tool.poetry.group.dev.dependencies]
-allure-pytest = "*"
 black = "*"
 coverage = "*"
 mypy = "*"
-myst-parser = "*"
 nox = "*"
 numpy = "*"
 pandas = "*"
-pdoc = "*"
 pre-commit = "*"
-pydata-sphinx-theme = "0.15.2"
+smokeshow = "*"
+
+[tool.poetry.group.test.dependencies]
+allure-pytest = "*"
 pytest = "*"
+pytest-clarity = "^1.0.1"
 pytest-cov = "*"
 pytest-html = "*"
 pytest-memray = "*"
-smokeshow = "*"
+
+[tool.poetry.group.doc.dependencies]
+myst-parser = "*"
+pdoc = "*"
+pydata-sphinx-theme = "0.15.2"
 sphinx-book-theme = "1.1.2"
 sphinx-design = "0.5.0"
 

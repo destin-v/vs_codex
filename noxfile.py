@@ -19,9 +19,6 @@ class config:
     pdoc_path: str = "docs/source/_static/pdocs"
     sphinx_path: str = "docs/build/html"
 
-    # Memory Management
-    scalene_path: str = "docs/source/_static/scalene"
-
 
 @nox.session
 def pytest(session: nox.Session):
