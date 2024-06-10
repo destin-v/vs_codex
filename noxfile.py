@@ -16,7 +16,6 @@ class config:
     pytest_path_summary: str = "docs/source/_static/pytest-summary"
 
     # Documentation
-    pdoc_path: str = "docs/source/_static/pdocs"
     sphinx_path: str = "docs/build/html"
 
 
@@ -65,34 +64,6 @@ def pytest(session: nox.Session):
 
 
 @nox.session
-def pdoc(session: nox.Session):
-    """Generate pdocs.
-
-    Args:
-        session (nox.Session): The current Nox session.
-    """
-
-    session.run("poetry", "install", "--with=dev", "--no-root")
-    session.run("mkdir", "-p", f"{config.pdoc_path}/docs", external=True)
-    session.run("cp", "-rf", "docs/pics", f"{config.pdoc_path}/docs/", external=True)
-    session.run(
-        "pdoc",
-        "-d",
-        "google",
-        "--logo",
-        "https://github.com/destin-v/vs_codex/blob/main/docs/pics/program_logo.png?raw=true",
-        "--logo-link",
-        "https://github.com/destin-v/vs_codex",
-        "--math",
-        "--footer-text",
-        "Author: W. Li",
-        "--output-directory",
-        config.pdoc_path,
-        "src",
-    )
-
-
-@nox.session
 def sphinx(session: nox.Session):
     """Generate Sphinx documentation.
 
@@ -124,18 +95,6 @@ def show_pytest(session: nox.Session):
 
 
 @nox.session
-def show_pdoc(session: nox.Session):
-    """Show pdoc in HTML.
-
-    Args:
-        session (nox.Session): The current Nox session.
-    """
-
-    pdoc(session)
-    view_html(config.pdoc_path)
-
-
-@nox.session
 def show_sphinx(session: nox.Session):
     """Show Sphinx in HTML.
 
@@ -157,5 +116,4 @@ def build(session: nox.Session):
 
     # Build external docs
     pytest(session)
-    pdoc(session)
     sphinx(session)

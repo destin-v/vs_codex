@@ -66,8 +66,7 @@ pytest-html = "*"
 pytest-memray = "*"
 
 [tool.poetry.group.doc.dependencies]
-myst-parser = "*"
-pdoc = "*"
+myst-parser = "3.0.1"
 pydata-sphinx-theme = "0.15.2"
 sphinx-book-theme = "1.1.2"
 sphinx-design = "0.5.0"
