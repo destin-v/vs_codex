@@ -11,12 +11,14 @@
 
 <p align="center">
   <a href="https://devguide.python.org/versions/">                <img alt="" src="https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white"></a>
-  <a href="https://docs.github.com/en/actions/quickstart">        <img alt="" src="https://img.shields.io/badge/CI-github-blue?logo=github&logoColor=white"></a>
+  <a href="https://github.com/pre-commit/pre-commit">             <img alt="" src="https://img.shields.io/badge/pre--commit-enabled-blue?logo=pre-commit"></a>
+  <a href="https://docs.pytest.org/en/7.1.x/getting-started.html"><img alt="" src="https://img.shields.io/badge/pytest-enabled-blue?logo=pytest&logoColor=white"></a>
   <a href="https://sphinx-book-theme.readthedocs.io/en/stable/">  <img alt="" src="https://img.shields.io/badge/Sphinx-^1.1.2-blue?logo=sphinx&logoColor=white"></a>
   <a href="https://black.readthedocs.io/en/stable/index.html">    <img alt="" src="https://img.shields.io/badge/code%20style-black-blue?logo=stylelint&logoColor=white"></a>
 </p>
 
 <p align="center">
+  <a href="https://docs.github.com/en/actions/quickstart">                          <img alt="" src="https://img.shields.io/badge/CI-github-brightgreen?logo=github&logoColor=white"></a>
   <a href="https://github.com/destin-v/vs_codex/actions/workflows/pre-commit.yml">  <img alt="pre-commit" src="https://github.com/destin-v/vs_codex/actions/workflows/pre-commit.yml/badge.svg"></a>
   <a href="https://github.com/destin-v/vs_codex/actions/workflows/sphinx.yml">      <img alt="sphinx" src="https://github.com/destin-v/vs_codex/actions/workflows/sphinx.yml/badge.svg"></a>
   <a href="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml">      <img alt="pytest" src="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml/badge.svg"></a>

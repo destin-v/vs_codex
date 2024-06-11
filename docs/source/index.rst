@@ -10,7 +10,7 @@
     |Program Logo|
 
 .. centered::
-    |Python Version| |Github| |Sphinx| |Style|
+    |Python Version| |Pre-Commit| |Pytest| |Sphinx| |Style| |Github|
 
 **TODO:** Description of your project goes here. [#]_
 
@@ -50,9 +50,17 @@ Indices and tables
     image:: https://img.shields.io/badge/python-^3.10-blue?logo=python&logoColor=white
     :target: https://devguide.python.org/versions/
 
+.. |Pre-Commit|
+    image:: https://img.shields.io/badge/pre--commit-enabled-blue?logo=pre-commit
+    :target: https://github.com/pre-commit/pre-commit
+
 .. |Github|
     image:: https://img.shields.io/badge/CI-github-blue?logo=github&logoColor=white
     :target: https://docs.github.com/en/actions/quickstart
+
+.. |Pytest|
+    image:: https://img.shields.io/badge/pytest-enabled-blue?logo=pytest&logoColor=white
+    :target: https://docs.pytest.org/en/7.1.x/getting-started.html
 
 .. |Sphinx|
     image:: https://img.shields.io/badge/Sphinx-book%20theme-blue?logo=sphinx&logoColor=white
