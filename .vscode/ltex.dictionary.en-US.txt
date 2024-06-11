@@ -4,8 +4,6 @@ Pytests
 MesloLGLDZ
 Miniconda
 Nox
-pdoc
-Pdoc
 nox
 pytest
 PyTests

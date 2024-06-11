@@ -19,7 +19,6 @@ save
 
 # Sphinx build files
 docs/build
-docs/source/_static/pdocs
 docs/source/_static/pytest-allure*
 docs/source/_static/pytest-coverage
 docs/source/_static/pytest-summary

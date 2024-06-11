@@ -43,11 +43,6 @@ Indices and tables
 * :ref:`modindex` [#]_
 * :ref:`search`
 
-########
-External
-########
-* `Pdoc <_static/pdocs/index.html>`_
-
 ..
    Backlinks and references
 

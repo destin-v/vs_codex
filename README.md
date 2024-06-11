@@ -18,7 +18,7 @@
 
 <p align="center">
   <a href="https://github.com/destin-v/vs_codex/actions/workflows/pre-commit.yml">  <img alt="pre-commit" src="https://github.com/destin-v/vs_codex/actions/workflows/pre-commit.yml/badge.svg"></a>
-  <a href="https://github.com/destin-v/vs_codex/actions/workflows/sphinx.yml">      <img alt="pdoc" src="https://github.com/destin-v/vs_codex/actions/workflows/sphinx.yml/badge.svg"></a>
+  <a href="https://github.com/destin-v/vs_codex/actions/workflows/sphinx.yml">      <img alt="sphinx" src="https://github.com/destin-v/vs_codex/actions/workflows/sphinx.yml/badge.svg"></a>
   <a href="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml">      <img alt="pytest" src="https://github.com/destin-v/vs_codex/actions/workflows/pytest.yml/badge.svg"></a>
 </p>
 

@@ -29,24 +29,14 @@ If you need to `resync` your environment try:
 Documentation
 -------------
 
-
-
 To generate the full documentation use Sphinx [#]_.
 
 .. code-block:: console
 
    nox -rs show_sphinx
 
-
-To generate minimal documentation use Pdoc [#]_.
-
-.. code-block:: console
-
-   nox -rs show_pdoc
-
 ..
    Footnotes
 .. rubric:: Footnotes
 
 .. [#] This will generate a ``index.html`` under ``docs/build/index.html``.
-.. [#] This will generate a ``index.html`` under ``save/pdocs/index.html``.

@@ -1,5 +1,4 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAdd secret GH_GITHUB_COM_TOKEN and paste the generated GitHub token.\\E$"}
-{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qcoverage: provides code coverage analysis\npdoc: basic documentation software\nscalene: profiler for evaluating performance\nsphinx: advance documentation software\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QSettings › Remote.SSH: Lockfiles In Tmp ON\nSettings › Remote.SSH: useFlock OFF\nCmd-Shift-P › Remote-SSH: Kill VSCode Server on Host...\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QShift-Cmd-P › Python: Configure Tests › Pytests › <target_dir>\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q✨ Theme\nTo customize your themes you need to set them in your settings.json file.\\E$"}
