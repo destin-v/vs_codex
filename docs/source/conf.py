@@ -62,7 +62,7 @@ html_theme_options: dict = {
     "repository_url": "https://github.com/destin-v/vs_codex",  # repo link
     "use_repository_button": True,
     "logo": {
-        "text": "My awesome documentation",
+        # "text": "My awesome documentation",
         "image_light": "_static/logo.svg",
         "image_dark": "_static/logo.svg",
     },
@@ -86,8 +86,9 @@ html_theme_options: dict = {
             "type": "fontawesome",
         },
     ],
-    # "navbar_start": ["navbar-logo"],
-    # "navbar_center": ["navbar-nav"],
-    # "navbar_end": ["navbar-icon-links"],
-    # "navbar_persistent": ["search-button"],
+    # "footer_start": [
+    #     "copyright",
+    #     "sphinx-version",
+    # ],
+    # "footer_end": ["theme-version"],
 }

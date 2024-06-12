@@ -7,9 +7,6 @@
     |Li Productions|
 
 .. centered::
-    |Program Logo|
-
-.. centered::
     |Python Version| |Pre-Commit| |Pytest| |Sphinx| |Style| |Github|
 
 **TODO:** Description of your project goes here. [#]_
