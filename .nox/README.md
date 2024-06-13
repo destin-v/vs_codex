@@ -1,4 +1,4 @@
-# 🧪 Nox
+# Nox
 
 Nox is the spiritual successor to Tox for running scripts in controlled environments.
 
@@ -8,10 +8,10 @@ Nox is the spiritual successor to Tox for running scripts in controlled environm
 The `noxfile.py` provides an example of how to run each of these:
 
 ```bash
-    nox --list              # lists out all the available sessions
-    nox -rs pytest          # run pytests
-    nox -rs show_sphinx     # view HTML of sphinx
-    nox -rs build           # build pytest & documentation
+nox --list              # lists out all the available sessions
+nox -rs pytest          # run pytests
+nox -rs show_sphinx     # view HTML of sphinx
+nox -rs build           # build pytest & documentation
 ```
 
 

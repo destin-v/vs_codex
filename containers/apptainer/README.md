@@ -1,4 +1,4 @@
-# 🦉 [Apptainer](https://apptainer.org)
+# [Apptainer](https://apptainer.org)
 
 ## Description
 * Primary method for building and maintaining **secure** containers.
