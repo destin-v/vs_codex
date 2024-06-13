@@ -66,6 +66,7 @@ pytest-html = "*"
 pytest-memray = "*"
 
 [tool.poetry.group.doc.dependencies]
+esbonio = "*"
 myst-parser = "*"
 pydata-sphinx-theme = "*"
 sphinx-book-theme = "*"

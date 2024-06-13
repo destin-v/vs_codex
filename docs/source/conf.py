@@ -28,7 +28,6 @@ extensions: list[str] = [
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
-    "sphinx_thebe",
 ]
 
 source_suffix: dict = {".rst": "restructuredtext"}
@@ -79,9 +78,6 @@ html_theme_options: dict = {
             "type": "fontawesome",
         },
     ],
-    "launch_buttons": {
-        "thebe": True,
-    },
     "logo": {
         # "text": "My awesome documentation",
         "image_light": "_static/logo.svg",
