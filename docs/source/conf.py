@@ -22,12 +22,13 @@ release: str = "1.00"
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions: list[str] = [
+    "myst_parser",
     "sphinx_design",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
-    "myst_parser",
     "sphinx.ext.viewcode",
+    "sphinx_thebe",
 ]
 
 source_suffix: dict = {".rst": "restructuredtext"}
@@ -58,14 +59,6 @@ html_css_files: list[str] = [
 
 html_theme: str = "sphinx_book_theme"
 html_theme_options: dict = {
-    "use_sidenotes": True,  # allow Edward Tufte style side-nodes
-    "repository_url": "https://github.com/destin-v/vs_codex",  # repo link
-    "use_repository_button": True,
-    "logo": {
-        # "text": "My awesome documentation",
-        "image_light": "_static/logo.svg",
-        "image_dark": "_static/logo.svg",
-    },
     "icon_links": [
         {
             "name": "GitHub",
@@ -86,6 +79,17 @@ html_theme_options: dict = {
             "type": "fontawesome",
         },
     ],
+    "launch_buttons": {
+        "thebe": True,
+    },
+    "logo": {
+        # "text": "My awesome documentation",
+        "image_light": "_static/logo.svg",
+        "image_dark": "_static/logo.svg",
+    },
+    "repository_url": "https://github.com/destin-v/vs_codex",  # repo link
+    "use_repository_button": True,
+    "use_sidenotes": True,  # allow Edward Tufte style side-nodes
     # "footer_start": [
     #     "copyright",
     #     "sphinx-version",
