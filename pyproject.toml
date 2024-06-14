@@ -45,14 +45,23 @@ python = "^3.10"
 rich = "^13.7.0"
 typer = {extras = ["all"], version = "^0.9.0"}
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.group.cicd.dependencies]
 black = "*"
-coverage = "*"
 mypy = "*"
 nox = "*"
+pre-commit = "*"
+
+[tool.poetry.group.dev.dependencies]
 numpy = "*"
 pandas = "*"
-pre-commit = "*"
+
+[tool.poetry.group.doc.dependencies]
+myst-parser = "*"
+pydata-sphinx-theme = "*"
+sphinx-book-theme = "*"
+sphinx-design = "*"
+
+[tool.poetry.group.misc.dependencies]
 smokeshow = "*"
 
 [tool.poetry.group.test.dependencies]
@@ -62,13 +71,6 @@ pytest-clarity = "^1.0.1"
 pytest-cov = "*"
 pytest-html = "*"
 pytest-memray = "*"
-
-[tool.poetry.group.doc.dependencies]
-esbonio = "*"
-myst-parser = "*"
-pydata-sphinx-theme = "*"
-sphinx-book-theme = "*"
-sphinx-design = "*"
 
 [build-system]
 requires = ["poetry-core"]
