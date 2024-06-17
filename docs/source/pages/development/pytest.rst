@@ -1,2 +1,2 @@
-.. include:: ../../../../src/tests/README.md
+.. include:: ../../../../tests/README.md
    :parser: myst_parser.sphinx_

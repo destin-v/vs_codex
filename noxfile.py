@@ -73,7 +73,8 @@ def sphinx(session: nox.Session):
     session.run("poetry", "install", "--with=dev", "--no-root")
 
     # Build Sphinx
-    session.run("sphinx-apidoc", "-o", "docs/source/pages/api", "src")
+    session.run("sphinx-apidoc", "-o", "docs/source/pages/api/src", "src")
+    session.run("sphinx-apidoc", "-o", "docs/source/pages/api/tests", "tests")
     session.chdir("docs")
     session.run("make", "clean", external=True)
     session.run("make", "html", external=True)

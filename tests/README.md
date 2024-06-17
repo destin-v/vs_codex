@@ -3,8 +3,8 @@ Tests should include both `unit testing` and `integration testing`.  Prior to de
 
 ```bash
 pytest # run all tests
-pytest pytest src/tests/basic_test.py # run tests in module
-pytest src/tests/basic_test.py::test_hello_world # run a specific test
+pytest pytest tests/basic_test.py # run tests in module
+pytest tests/basic_test.py::test_hello_world # run a specific test
 ```
 
 PyTest provides additional features such as [parameter sweeping](https://docs.pytest.org/en/7.1.x/example/parametrize.html), [fixtures](https://docs.pytest.org/en/7.1.x/explanation/fixtures.html?highlight=fixtures), and [logging](https://docs.pytest.org/en/7.1.x/how-to/logging.html?highlight=fixtures).  These should be applied depending on the test requirements.
