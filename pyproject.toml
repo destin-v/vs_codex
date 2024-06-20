@@ -40,7 +40,6 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-poetry = "^1.8"
 python = "^3.10"
 rich = "^13.7.0"
 typer = {extras = ["all"], version = "^0.9.0"}
