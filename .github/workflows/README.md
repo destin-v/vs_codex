@@ -1,4 +1,4 @@
-# ♾️ Continuous Integration / Continuous Development (CI/CD)
+# Continuous Integration / Continuous Development (CI/CD)
 
 ## Workflows
 GitHub workflows with continuous integration is included.  The GitHub workflows send their tasks to GitHub runners by default.  If you want to route jobs to your **self-hosted** runners make sure to add a **label**.  The steps are:
