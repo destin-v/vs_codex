@@ -1,9 +1,10 @@
 ..  toctree::
     :maxdepth: 1
 
-    vscode
-    pytest
-    nox
-    docker
     apptainer
+    docker
     cicd
+    logging
+    nox
+    pytest
+    vscode
