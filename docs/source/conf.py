@@ -60,22 +60,28 @@ html_theme: str = "sphinx_book_theme"
 html_theme_options: dict = {
     "icon_links": [
         {
-            "name": "GitHub",
+            "name": "W. Li",
             "url": "https://github.com/destin-v",
-            "icon": "fa-brands fa-square-github",
+            "icon": "fa-regular fa-chess-knight",
             "type": "fontawesome",
+        },
+        {
+            "name": "GitHub",
+            "url": "https://github.com/destin-v/vs_codex/actions",
+            "icon": "fa-solid fa-vial-circle-check",
+            "type": "fontawesome",
+        },
+        {
+            "name": "Executable Books",
+            "url": "https://executablebooks.org/",
+            "icon": "_static/ebp-logo.png",
+            "type": "local",
         },
         {
             "name": "Book Theme",
             "url": "https://sphinx-book-theme.readthedocs.io/en/stable/index.html",
-            "icon": "fa-regular fa-bookmark",
-            "type": "fontawesome",
-        },
-        {
-            "name": "Book Theme Demo",
-            "url": "https://sphinx-themes.org/sample-sites/sphinx-book-theme/",
-            "icon": "fa-solid fa-hat-wizard",
-            "type": "fontawesome",
+            "icon": "_static/book-theme.svg",
+            "type": "local",
         },
     ],
     "logo": {
