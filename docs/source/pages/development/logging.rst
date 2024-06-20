@@ -15,7 +15,28 @@ Logging
     logger.add(sys.stdout, level="INFO")
 
     # Print out the different message types
-    logger.debug("debug message")
+    logger.debug("debug message")   # this line will be ignored because of log_level!
+    logger.info("info message")
+    logger.warning("warning message")
+    logger.error("error message")
+
+When running PyTest the logging is usually not printed out to the terminal.  But with Loguru you can capture the output by directing the *sink* to a file:
+
+.. code-block:: python
+
+    # Add a new handler which has INFO as the default
+    log_level = "INFO"
+    logger.add(sys.stdout, level="INFO")
+    logger.add(
+        "save/log",
+        level=log_level,
+        colorize=False,
+        backtrace=True,
+        diagnose=True,
+    )
+
+    # Print out the different message types
+    logger.debug("debug message") # this line will be ignored because of log_level!
     logger.info("info message")
     logger.warning("warning message")
     logger.error("error message")
