@@ -8,6 +8,10 @@ To install:
 
 .. code-block:: console
 
+   brew install poetry
+
+.. code-block:: console
+
    poetry install
 
 .. note::
