@@ -31,15 +31,20 @@ allure generate --single-file --output <output_dir> # generate a report (HTML)
 ```
 
 ## Design Pattern
-Placed a `tests` folder underneath every `module` that you want to create tests for.  A top level `tests` folder can be included for integration tests that span multiple modules.
+The `tests` folder should mirror what you have in `src` to ensure that each submodule is properly tested.  You can include a `integration` folder under `tests` to evaluate larger tests.
 
 ```
 project
 └───src
-│   └───tests
+|   └─── __init__.py
+│   └───packageA
 │       └─── __init__.py
-│       └─── unit_test.py
+│       └─── A.py
 └───tests
     └─── __init__.py
-    └─── integration_test.py
+    └─── packageA
+         └─── __init__.py
+         └─── A_test.py
 ```
+
+It is generally recommended that you do not have `tests` in your `src` folder since they would become importable as part of your distribution.
