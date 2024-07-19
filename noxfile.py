@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 import nox
 
-from src.ci.utils import view_html
+from src.ci.browser import view_html
 
 
 @dataclass
