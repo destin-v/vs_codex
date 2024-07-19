@@ -15,7 +15,9 @@ __pycache__
 .pytest_cache
 
 # Folders to ignore
-save
+.nox/
+save/
+logs/
 
 # Sphinx build files
 docs/build
